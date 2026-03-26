@@ -1,0 +1,14 @@
+CollisionShape2D
+Area2D
+TextureRect
+PointLight2D
+DirectionalLight2D
+AudioStreamPlayer2D
+RichTextLabel
+Label
+Sprite2D
+AnimatedSprite2D
+Timer
+StaticBody2D
+Node2D
+AnimationPlayer

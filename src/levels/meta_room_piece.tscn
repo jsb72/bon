@@ -1,0 +1,502 @@
+[gd_scene format=3 uid="uid://c1ye8j32cc6js"]
+
+[ext_resource type="PackedScene" uid="uid://cw3lva8ggoihd" path="res://src/levels/room_piece.tscn" id="1_pvq73"]
+[ext_resource type="Script" uid="uid://bx05u75a6jdq8" path="res://src/levels/meta_room_piece.gd" id="1_u6kd6"]
+[ext_resource type="Shader" uid="uid://r5ttx5k57uqv" path="res://shaders/laser.gdshader" id="2_m2xyl"]
+[ext_resource type="PackedScene" uid="uid://ca0qqvc5pjlky" path="res://src/elements/button.tscn" id="3_pgh4i"]
+[ext_resource type="Script" uid="uid://bhexx6mj1xv3q" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_vf124"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_anba5"]
+[ext_resource type="Script" uid="uid://dimvdouy8g0sv" path="res://addons/phantom_camera/scripts/resources/phantom_camera_noise_2d.gd" id="8_lory2"]
+[ext_resource type="PackedScene" uid="uid://bhno22n7k5cmv" path="res://src/elements/portal.tscn" id="9_anba5"]
+[ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="10_lory2"]
+[ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="11_88ojq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2xyl"]
+shader = ExtResource("2_m2xyl")
+shader_parameter/beams = 3
+shader_parameter/energy = 3.0
+shader_parameter/roughness = 3
+shader_parameter/frequency = 10
+shader_parameter/speed = 1.0
+shader_parameter/thickness = 0.0
+shader_parameter/outline_thickness = 0.0130000006175
+shader_parameter/beam_difference = 0.0
+shader_parameter/glow = 0.0
+shader_parameter/outline_glow = 0.326000015485
+shader_parameter/color = Color(0.91, 1, 1, 1)
+shader_parameter/outline_color = Color(18.892157, 18.892157, 18.892157, 1)
+shader_parameter/progress = 0.9600000456
+shader_parameter/y_offset = 0.0
+shader_parameter/fixed_edge_size = 0.5
+shader_parameter/noise_scale = Vector2(1, 1)
+
+[sub_resource type="Resource" id="Resource_88ojq"]
+script = ExtResource("7_anba5")
+
+[sub_resource type="Resource" id="Resource_nvtr1"]
+script = ExtResource("8_lory2")
+amplitude = 20.0
+frequency = 0.8
+randomize_noise_seed = 1
+positional_noise = false
+metadata/_custom_type_script = "uid://dimvdouy8g0sv"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf124"]
+size = Vector2(2907, 3966.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lory2"]
+size = Vector2(1090.5, 3021)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88ojq"]
+size = Vector2(1910, 1998)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvtr1"]
+size = Vector2(609.5, 501)
+
+[node name="meta_room_piece" type="Node2D" unique_id=1053535631]
+position = Vector2(0, -1)
+script = ExtResource("1_u6kd6")
+
+[node name="room_piece" parent="." unique_id=1832363316 instance=ExtResource("1_pvq73")]
+
+[node name="room_piece2" parent="." unique_id=1232636727 instance=ExtResource("1_pvq73")]
+position = Vector2(0, 2000)
+
+[node name="room_piece3" parent="." unique_id=1191612697 instance=ExtResource("1_pvq73")]
+position = Vector2(1999, 0)
+
+[node name="room_piece4" parent="." unique_id=1518745893 instance=ExtResource("1_pvq73")]
+position = Vector2(1999, 2000)
+
+[node name="room_piece5" parent="." unique_id=1617287924 instance=ExtResource("1_pvq73")]
+position = Vector2(3998, 0)
+
+[node name="room_piece6" parent="." unique_id=115892344 instance=ExtResource("1_pvq73")]
+position = Vector2(3998, 2000)
+
+[node name="CollisionShape2D7" parent="room_piece6/StaticBody2D" parent_id_path=PackedInt32Array(115892344, 99470810) index="7" unique_id=634185131]
+position = Vector2(-4957, -3359)
+
+[node name="CollisionShape2D7" parent="room_piece6/StaticBody2D2" parent_id_path=PackedInt32Array(115892344, 122980264) index="5" unique_id=285177905]
+position = Vector2(-5845, -3340)
+
+[node name="CollisionShape2D5" parent="room_piece6/StaticBody2D2" parent_id_path=PackedInt32Array(115892344, 122980264) index="7" unique_id=593581117]
+position = Vector2(-5880, -3305)
+
+[node name="CollisionShape2D" parent="room_piece6/StaticBody2D3" parent_id_path=PackedInt32Array(115892344, 982750117) index="0" unique_id=1197765520]
+position = Vector2(-5854, -4353)
+
+[node name="CollisionShape2D5" parent="room_piece6/StaticBody2D3" parent_id_path=PackedInt32Array(115892344, 982750117) index="1" unique_id=1636384503]
+position = Vector2(-5720, -4274)
+
+[node name="CollisionShape2D2" parent="room_piece6/StaticBody2D3" parent_id_path=PackedInt32Array(115892344, 982750117) index="2" unique_id=375595637]
+position = Vector2(-5823, -4255)
+
+[node name="CollisionShape2D3" parent="room_piece6/StaticBody2D3" parent_id_path=PackedInt32Array(115892344, 982750117) index="3" unique_id=1817043982]
+position = Vector2(-5961, -4332)
+
+[node name="CollisionShape2D4" parent="room_piece6/StaticBody2D3" parent_id_path=PackedInt32Array(115892344, 982750117) index="4" unique_id=1219258179]
+position = Vector2(-5844, -4344)
+
+[node name="CollisionShape2D2" parent="room_piece6/StaticBody2D4" parent_id_path=PackedInt32Array(115892344, 1266986150) index="2" unique_id=492083954]
+position = Vector2(-4973, -4255)
+
+[node name="CollisionShape2D4" parent="room_piece6/StaticBody2D4" parent_id_path=PackedInt32Array(115892344, 1266986150) index="4" unique_id=424293370]
+position = Vector2(-4920, -4258)
+
+[node name="room_piece7" parent="." unique_id=183691990 instance=ExtResource("1_pvq73")]
+position = Vector2(-1999, 0)
+
+[node name="CollisionShape2D" parent="room_piece7/StaticBody2D" parent_id_path=PackedInt32Array(183691990, 99470810) index="0" unique_id=1064762727]
+position = Vector2(1087, -1375)
+
+[node name="CollisionShape2D6" parent="room_piece7/StaticBody2D" parent_id_path=PackedInt32Array(183691990, 99470810) index="1" unique_id=635353654]
+position = Vector2(1008, -1462)
+
+[node name="CollisionShape2D3" parent="room_piece7/StaticBody2D" parent_id_path=PackedInt32Array(183691990, 99470810) index="4" unique_id=1371318716]
+position = Vector2(913, -1390)
+
+[node name="CollisionShape2D5" parent="room_piece7/StaticBody2D" parent_id_path=PackedInt32Array(183691990, 99470810) index="5" unique_id=644638540]
+position = Vector2(968, -1289)
+
+[node name="room_piece8" parent="." unique_id=1073936224 instance=ExtResource("1_pvq73")]
+position = Vector2(-1999, 2000)
+
+[node name="T1" type="Node2D" parent="." unique_id=62797182]
+
+[node name="1" type="Node2D" parent="T1" unique_id=1775674601]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="T1/1" unique_id=473259651]
+material = SubResource("ShaderMaterial_m2xyl")
+offset_left = -24.0
+offset_top = 695.0
+offset_right = 2034.0
+offset_bottom = 3331.0
+
+[node name="2" type="Node2D" parent="T1" unique_id=814695952]
+visible = false
+position = Vector2(2057, -224.99997)
+rotation = 1.0995574
+
+[node name="ColorRect2" type="ColorRect" parent="T1/2" unique_id=1340089854]
+material = SubResource("ShaderMaterial_m2xyl")
+offset_left = -291.7638
+offset_top = -267.0
+offset_right = 1989.5573
+offset_bottom = 2369.0
+
+[node name="3" type="Node2D" parent="T1" unique_id=1443142301]
+visible = false
+position = Vector2(-809, 1199)
+rotation = -1.0995574
+
+[node name="ColorRect2" type="ColorRect" parent="T1/3" unique_id=1915289263]
+material = SubResource("ShaderMaterial_m2xyl")
+offset_left = -352.01175
+offset_top = -241.51341
+offset_right = 1901.346
+offset_bottom = 2394.4866
+
+[node name="T2" type="Node2D" parent="." unique_id=1223878335]
+
+[node name="1" type="Node2D" parent="T2" unique_id=1235090269]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="T2/1" unique_id=1948505944]
+material = SubResource("ShaderMaterial_m2xyl")
+offset_left = -13.0
+offset_top = -306.0
+offset_right = 2015.0
+offset_bottom = 2330.0
+
+[node name="2" type="Node2D" parent="T2" unique_id=1664038340]
+visible = false
+position = Vector2(2012.9999, -228)
+rotation = 1.0995574
+
+[node name="ColorRect2" type="ColorRect" parent="T2/2" unique_id=351221809]
+material = SubResource("ShaderMaterial_m2xyl")
+offset_left = 170.0113
+offset_top = 1051.8254
+offset_right = 2418.041
+offset_bottom = 3687.8254
+
+[node name="3" type="Node2D" parent="T2" unique_id=2080613567]
+visible = false
+position = Vector2(-884, 1365)
+rotation = -1.0995574
+
+[node name="ColorRect2" type="ColorRect" parent="T2/3" unique_id=1114031959]
+material = SubResource("ShaderMaterial_m2xyl")
+offset_left = -600.8004
+offset_top = 1096.2408
+offset_right = 1646.5629
+offset_bottom = 3732.2407
+
+[node name="buttons" type="Node2D" parent="." unique_id=1834316626]
+position = Vector2(5, 233)
+
+[node name="button" parent="buttons" unique_id=1913669619 instance=ExtResource("3_pgh4i")]
+position = Vector2(-6, 2068)
+
+[node name="button2" parent="buttons" unique_id=1816048380 instance=ExtResource("3_pgh4i")]
+position = Vector2(-6, 1061)
+
+[node name="buttons2" type="Node2D" parent="." unique_id=1334336263]
+position = Vector2(2007, 233)
+
+[node name="button" parent="buttons2" unique_id=250079183 instance=ExtResource("3_pgh4i")]
+position = Vector2(-6, 2068)
+
+[node name="button2" parent="buttons2" unique_id=834129342 instance=ExtResource("3_pgh4i")]
+position = Vector2(-6, 1061)
+
+[node name="txt" type="Node2D" parent="." unique_id=1188014602]
+
+[node name="Label" type="RichTextLabel" parent="txt" unique_id=588666303]
+offset_left = -312.0
+offset_top = 688.0
+offset_right = 319.0
+offset_bottom = 1312.0
+theme_override_font_sizes/normal_font_size = 55
+text = "« ARPANET,
+Sa première démonstration officielle date d'octobre "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="RichTextLabel" parent="txt" unique_id=1400485756]
+offset_left = 1690.0
+offset_top = 688.0
+offset_right = 2321.0
+offset_bottom = 1312.0
+theme_override_font_sizes/normal_font_size = 55
+text = "« Le langage C a été inventé au cours de l'année"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="RichTextLabel" parent="txt" unique_id=970376145]
+offset_left = 1690.0
+offset_top = 1689.0
+offset_right = 2321.0
+offset_bottom = 2313.0
+theme_override_font_sizes/normal_font_size = 55
+text = "« En , Richard Karp a prouvé la NP-complétude de plusieurs autres problèmes fondamentaux en informatique"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label9" type="RichTextLabel" parent="txt" unique_id=833008860]
+offset_left = -309.0
+offset_top = 1689.0
+offset_right = 322.0
+offset_bottom = 2313.0
+theme_override_font_sizes/normal_font_size = 55
+text = "« MK-Ultra
+sa fin est décidée le 10 juillet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label10" type="RichTextLabel" parent="txt" unique_id=2112262056]
+offset_left = 682.0
+offset_top = 2685.0
+offset_right = 1313.0
+offset_bottom = 3309.0
+theme_override_font_sizes/normal_font_size = 55
+text = "« La Bille bleue est une photographie célèbre de la Terre, prise le 7 décembre"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label11" type="RichTextLabel" parent="txt" unique_id=324337172]
+offset_left = 682.0
+offset_top = -312.0
+offset_right = 1313.0
+offset_bottom = 312.0
+theme_override_font_sizes/normal_font_size = 55
+text = "« Les Limites à la croissance, est un rapport commandé par le club de Rome et publié en "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="zoomcamfixnbig" type="Node2D" parent="." unique_id=1100236921]
+unique_name_in_owner = true
+position = Vector2(995, 1502)
+script = ExtResource("6_vf124")
+zoom = Vector2(0.2, 0.2)
+tween_resource = SubResource("Resource_88ojq")
+follow_offset = Vector2(0, -160)
+follow_damping = true
+dead_zone_width = 0.5
+dead_zone_height = 0.5
+draw_limits = true
+noise = SubResource("Resource_nvtr1")
+metadata/_custom_type_script = "uid://bhexx6mj1xv3q"
+
+[node name="cam_zone" type="Area2D" parent="." unique_id=1850013775]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cam_zone" unique_id=2107227008]
+position = Vector2(996.5, 1497.875)
+shape = SubResource("RectangleShape2D_vf124")
+
+[node name="portals" type="Node2D" parent="." unique_id=1501362111]
+
+[node name="portal2" parent="portals" unique_id=1307896710 node_paths=PackedStringArray("portal_target") instance=ExtResource("9_anba5")]
+position = Vector2(2994, 1339)
+rotation = 1.5707964
+portal_target = NodePath("../portal4")
+portal_reverse_color = true
+
+[node name="portal4" parent="portals" unique_id=555710292 node_paths=PackedStringArray("portal_target") instance=ExtResource("9_anba5")]
+position = Vector2(2994, 1652)
+rotation = -1.5707964
+portal_target = NodePath("../portal2")
+
+[node name="portal5" parent="portals" unique_id=1104655613 node_paths=PackedStringArray("portal_target") instance=ExtResource("9_anba5")]
+position = Vector2(993, 3339)
+rotation = 1.5707964
+portal_target = NodePath("../portal6")
+
+[node name="portal6" parent="portals" unique_id=1135614717 node_paths=PackedStringArray("portal_target") instance=ExtResource("9_anba5")]
+position = Vector2(993, 1652)
+rotation = -1.5707964
+portal_target = NodePath("../portal5")
+portal_reverse_color = true
+
+[node name="middleremonte" type="Node2D" parent="." unique_id=1031593509]
+
+[node name="pt_blueprint" parent="middleremonte" unique_id=920875960 instance=ExtResource("10_lory2")]
+position = Vector2(2669, 2140)
+
+[node name="pt_blueprint2" parent="middleremonte" unique_id=1548349440 instance=ExtResource("10_lory2")]
+position = Vector2(2735, 2140)
+
+[node name="pt_blueprint3" parent="middleremonte" unique_id=2059311854 instance=ExtResource("10_lory2")]
+position = Vector2(2804, 2140)
+
+[node name="pt_blueprint4" parent="middleremonte" unique_id=2045706067 instance=ExtResource("10_lory2")]
+position = Vector2(2876, 2140)
+
+[node name="pt_blueprint6" parent="middleremonte" unique_id=1580994012 instance=ExtResource("10_lory2")]
+position = Vector2(2872, 2093)
+
+[node name="pt_blueprint7" parent="middleremonte" unique_id=166117163 instance=ExtResource("10_lory2")]
+position = Vector2(2872, 2055)
+
+[node name="pt_blueprint8" parent="middleremonte" unique_id=2067281363 instance=ExtResource("10_lory2")]
+position = Vector2(2872, 2012)
+
+[node name="pt_blueprint9" parent="middleremonte" unique_id=1932830611 instance=ExtResource("10_lory2")]
+position = Vector2(2872, 1967)
+
+[node name="pt_blueprint10" parent="middleremonte" unique_id=153150646 instance=ExtResource("10_lory2")]
+position = Vector2(2872, 1922)
+
+[node name="pt_blueprint11" parent="middleremonte" unique_id=157401321 instance=ExtResource("10_lory2")]
+position = Vector2(2872, 1877)
+
+[node name="pt_blueprint12" parent="middleremonte" unique_id=8440585 instance=ExtResource("10_lory2")]
+position = Vector2(2872, 1831)
+
+[node name="pt_blueprint13" parent="middleremonte" unique_id=880021957 instance=ExtResource("10_lory2")]
+position = Vector2(2945, 1831)
+
+[node name="pt_blueprint16" parent="middleremonte" unique_id=1399423510 instance=ExtResource("10_lory2")]
+position = Vector2(3020, 1875)
+
+[node name="pt_blueprint14" parent="middleremonte" unique_id=70017683 instance=ExtResource("10_lory2")]
+position = Vector2(3020, 1831)
+
+[node name="pt_blueprint15" parent="middleremonte" unique_id=353483636 instance=ExtResource("10_lory2")]
+position = Vector2(3174, 2059)
+
+[node name="pt_blueprint17" parent="middleremonte" unique_id=1978067894 instance=ExtResource("10_lory2")]
+position = Vector2(3174, 2011)
+
+[node name="first_pont" type="Node2D" parent="." unique_id=597952611]
+
+[node name="pt_blueprint" parent="first_pont" unique_id=967365609 instance=ExtResource("10_lory2")]
+position = Vector2(-1338, 1139)
+
+[node name="pt_blueprint2" parent="first_pont" unique_id=2103249789 instance=ExtResource("10_lory2")]
+position = Vector2(-1260, 1139)
+
+[node name="pt_blueprint3" parent="first_pont" unique_id=1050537383 instance=ExtResource("10_lory2")]
+position = Vector2(-1181, 1139)
+
+[node name="pt_blueprint4" parent="first_pont" unique_id=924918837 instance=ExtResource("10_lory2")]
+position = Vector2(-1102, 1139)
+
+[node name="pt_blueprint5" parent="first_pont" unique_id=590368287 instance=ExtResource("10_lory2")]
+position = Vector2(-1022, 1139)
+
+[node name="pt_blueprint6" parent="first_pont" unique_id=67567587 instance=ExtResource("10_lory2")]
+position = Vector2(-944, 1139)
+
+[node name="pt_blueprint7" parent="first_pont" unique_id=1375770098 instance=ExtResource("10_lory2")]
+position = Vector2(-867, 1139)
+
+[node name="pt_blueprint8" parent="first_pont" unique_id=727807885 instance=ExtResource("10_lory2")]
+position = Vector2(-789, 1139)
+
+[node name="pt_blueprint9" parent="first_pont" unique_id=75151209 instance=ExtResource("10_lory2")]
+position = Vector2(-725, 1139)
+
+[node name="pt_blueprint10" parent="first_pont" unique_id=1973263679 instance=ExtResource("10_lory2")]
+position = Vector2(-645, 1139)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=764508637]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=540928018]
+position = Vector2(4006.25, 981.5)
+shape = SubResource("RectangleShape2D_lory2")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=98168326]
+position = Vector2(-2414, 2430)
+shape = SubResource("RectangleShape2D_88ojq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1622042040]
+position = Vector2(3836.25, 3367.5)
+shape = SubResource("RectangleShape2D_nvtr1")
+
+[node name="platforming" type="Node2D" parent="." unique_id=577614523]
+
+[node name="pt_blueprint" parent="platforming" unique_id=1848840839 instance=ExtResource("10_lory2")]
+position = Vector2(910, 1110)
+
+[node name="pt_blueprint2" parent="platforming" unique_id=401731474 instance=ExtResource("10_lory2")]
+position = Vector2(1098, 1051)
+
+[node name="pt_blueprint4" parent="platforming" unique_id=1222157240 instance=ExtResource("10_lory2")]
+position = Vector2(1126, 810)
+
+[node name="pt_blueprint7" parent="platforming" unique_id=1263753162 instance=ExtResource("10_lory2")]
+position = Vector2(1126, 810)
+
+[node name="pt_blueprint5" parent="platforming" unique_id=1993791647 instance=ExtResource("10_lory2")]
+position = Vector2(1126, 774)
+
+[node name="pt_blueprint8" parent="platforming" unique_id=10167271 instance=ExtResource("10_lory2")]
+position = Vector2(1126, 727)
+
+[node name="pt_blueprint9" parent="platforming" unique_id=1742962839 instance=ExtResource("10_lory2")]
+position = Vector2(835, 753)
+
+[node name="pt_blueprint10" parent="platforming" unique_id=396155610 instance=ExtResource("10_lory2")]
+position = Vector2(835, 753)
+
+[node name="pt_blueprint11" parent="platforming" unique_id=2131532892 instance=ExtResource("10_lory2")]
+position = Vector2(835, 717)
+
+[node name="pt_blueprint12" parent="platforming" unique_id=1846630784 instance=ExtResource("10_lory2")]
+position = Vector2(835, 670)
+
+[node name="pt_blueprint3" parent="platforming" unique_id=1396402770 instance=ExtResource("10_lory2")]
+position = Vector2(924, 917)
+
+[node name="pt_blueprint6" parent="platforming" unique_id=1838713429 instance=ExtResource("10_lory2")]
+position = Vector2(924, 868)
+
+[node name="3platformblueprint" parent="." unique_id=1490050212 instance=ExtResource("11_88ojq")]
+position = Vector2(-1102, 3139)
+
+[node name="3platformblueprint2" parent="." unique_id=667691794 instance=ExtResource("11_88ojq")]
+position = Vector2(-1144, 2580)
+rotation = 1.5707964
+
+[node name="platfoming2" type="Node2D" parent="." unique_id=1855611932]
+
+[node name="pt_blueprint" parent="platfoming2" unique_id=1596535939 instance=ExtResource("10_lory2")]
+position = Vector2(-931, 2966)
+
+[node name="pt_blueprint2" parent="platfoming2" unique_id=681739335 instance=ExtResource("10_lory2")]
+position = Vector2(-957, 2724)
+
+[node name="sol" type="Node2D" parent="." unique_id=1053019949]
+position = Vector2(-995, 712)
+
+[node name="pt_blueprint3" parent="sol" unique_id=861422240 instance=ExtResource("10_lory2")]
+position = Vector2(2917, 2371)
+
+[node name="pt_blueprint4" parent="sol" unique_id=1561627617 instance=ExtResource("10_lory2")]
+position = Vector2(2999, 2371)
+
+[node name="pt_blueprint5" parent="sol" unique_id=175997516 instance=ExtResource("10_lory2")]
+position = Vector2(3082, 2371)
+
+[node name="pt_blueprint6" parent="sol" unique_id=904947611 instance=ExtResource("10_lory2")]
+position = Vector2(3233, 541)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=758375941]
+offset_left = -3174.0
+offset_top = 3462.0
+offset_right = 4676.0
+offset_bottom = 13545.0
+color = Color(0.49803922, 0.49803922, 0.49803922, 1)
+
+[connection signal="body_entered" from="buttons/button" to="." method="_on_button_body_entered1"]
+[connection signal="body_entered" from="buttons/button2" to="." method="_on_button_2_body_entered3"]
+[connection signal="body_entered" from="buttons2/button" to="." method="_on_button_body_entered2"]
+[connection signal="body_entered" from="buttons2/button2" to="." method="_on_button_2_body_entered4"]
+[connection signal="body_entered" from="cam_zone" to="." method="_on_cam_zone_body_entered"]
+[connection signal="body_exited" from="cam_zone" to="." method="_on_cam_zone_body_exited"]
+
+[editable path="room_piece6"]
+[editable path="room_piece7"]

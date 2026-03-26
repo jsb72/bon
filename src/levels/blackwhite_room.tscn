@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dhmslis0y0ejr"]
+
+[ext_resource type="PackedScene" uid="uid://3t2f2pn81x60" path="res://src/elements/univers.tscn" id="1_l88fe"]
+[ext_resource type="Texture2D" uid="uid://bsairk87mham4" path="res://sprites/rooms/blackwhite.png" id="1_u4oek"]
+[ext_resource type="Texture2D" uid="uid://wabd2besh7bm" path="res://sprites/rooms/blackwhite2.png" id="2_uyhl4"]
+[ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="9_v5qbg"]
+
+[sub_resource type="Animation" id="Animation_l88fe"]
+resource_name = "1"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(911, 8), Vector2(251, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_u4oek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(911, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tr5ni"]
+_data = {
+&"1": SubResource("Animation_l88fe"),
+&"RESET": SubResource("Animation_u4oek")
+}
+
+[sub_resource type="Animation" id="Animation_uyhl4"]
+resource_name = "2"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(991, 8), Vector2(1662, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_jj565"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(991, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v5qbg"]
+_data = {
+&"2": SubResource("Animation_uyhl4"),
+&"RESET": SubResource("Animation_jj565")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qshff"]
+size = Vector2(1934.0298, 15)
+
+[node name="blackwhite_room" type="Node2D" unique_id=1082967431]
+
+[node name="univers" parent="." unique_id=1846410792 instance=ExtResource("1_l88fe")]
+position = Vector2(252, -233)
+scale = Vector2(0.09020833, 0.09020833)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=680059496]
+position = Vector2(2.5298154, -228.62506)
+scale = Vector2(0.32538244, 0.3253823)
+texture = ExtResource("1_u4oek")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1739789113]
+position = Vector2(2819.0002, -228.62503)
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("2_uyhl4")
+
+[node name="platform2" parent="." unique_id=1968047125 instance=ExtResource("9_v5qbg")]
+position = Vector2(911, 8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform2" unique_id=327397139]
+libraries/ = SubResource("AnimationLibrary_tr5ni")
+autoplay = &"1"
+speed_scale = 0.3
+
+[node name="platform" parent="." unique_id=1864631675 instance=ExtResource("9_v5qbg")]
+position = Vector2(991, 8)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="platform" unique_id=1756671649]
+libraries/ = SubResource("AnimationLibrary_v5qbg")
+autoplay = &"2"
+speed_scale = 0.3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1892136155]
+position = Vector2(32.529785, -413.62503)
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1221338130]
+position = Vector2(-787.5149, 405)
+shape = SubResource("RectangleShape2D_qshff")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1277190941]
+position = Vector2(2637.4702, 404.5)
+shape = SubResource("RectangleShape2D_qshff")

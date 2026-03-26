@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://qfht3ffettlq"]
+
+[ext_resource type="Script" uid="uid://c1myjyo415ms3" path="res://src/accueil.gd" id="1_o1nyv"]
+
+[node name="accueil" type="Node2D" unique_id=2027268033]
+script = ExtResource("1_o1nyv")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=42428622]
+offset_right = 3214.0
+offset_bottom = 1632.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=630756337]
+offset_right = 1280.0
+offset_bottom = 720.0
+text = "N'éteignez pas votre cerveau. Le jeu va commencer."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=2009255761]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
