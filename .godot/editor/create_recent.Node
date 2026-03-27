@@ -1,8 +1,10 @@
 ColorRect
+Parallax2D
 CanvasLayer
-Node2D
 SubViewport
 SubViewportContainer
+Container
+Node2D
 Line2D
 TextureRect
 Sprite2D
@@ -10,5 +12,3 @@ CollisionShape2D
 StaticBody2D
 AnimationPlayer
 AnimatableBody2D
-Area2D
-PointLight2D

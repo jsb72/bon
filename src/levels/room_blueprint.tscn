@@ -1035,7 +1035,7 @@ polygon = PackedVector2Array(11262, 1124, 11749, 937, 12118, 936, 12439, 843, 12
 position = Vector2(-312, -74)
 
 [node name="platform4" parent="lvl1/Structure/right_pt_zone" unique_id=1640767507 instance=ExtResource("8_ltygr")]
-position = Vector2(11837.888, -1223.098)
+position = Vector2(11888.466, -1223.098)
 
 [node name="platform" parent="lvl1/Structure/right_pt_zone" unique_id=1356746797 instance=ExtResource("8_ltygr")]
 position = Vector2(11614.427, -1244.5)
@@ -1106,7 +1106,7 @@ position = Vector2(-1189, 3010)
 position = Vector2(-1448, 2965)
 
 [node name="platform2" parent="lvl1/Structure/platform_underground" unique_id=1761266756 instance=ExtResource("8_ltygr")]
-position = Vector2(-1514, 2942)
+position = Vector2(-1569, 2942)
 
 [node name="pt_blueprint3" parent="lvl1/Structure/platform_underground" unique_id=354040863 instance=ExtResource("16_nfd4m")]
 position = Vector2(-1369, 3201)

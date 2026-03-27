@@ -4,9 +4,6 @@ res://shaders/damage_impact.gdshader
 res://shaders/verticalwhiterain.gdshader
 res://shaders/vhs.gdshader
 res://shaders/starfield.gdshader
-res://src/levels/room_blueprint.tscn
-res://src/bonus/bonus.tscn
+res://shaders/fog.gdshader
 res://src/global.gd
-res://src/accueil.tscn
-res://src/accueil.gd
-res://src/player/player.tscn
+res://src/platforms/laser_trap.tscn
