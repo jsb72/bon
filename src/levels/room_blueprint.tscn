@@ -18,7 +18,6 @@
 [ext_resource type="PackedScene" uid="uid://dayo7lbiwbhw3" path="res://src/elements/tas_de_cadavre.tscn" id="7_j2cwt"]
 [ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="8_ltygr"]
 [ext_resource type="PackedScene" uid="uid://bl14lcvp4g2nh" path="res://src/levels/room_1.tscn" id="9_7157o"]
-[ext_resource type="PackedScene" uid="uid://bt0bmj5dihnpp" path="res://src/vivants/monster.tscn" id="10_41y7b"]
 [ext_resource type="PackedScene" uid="uid://c07ghb70rt8ft" path="res://src/levels/escalier_room.tscn" id="12_7ls7j"]
 [ext_resource type="PackedScene" uid="uid://c00nse01mwe63" path="res://src/platforms/laser_trap.tscn" id="13_f4kdv"]
 [ext_resource type="PackedScene" uid="uid://dhihe4rrnqw3d" path="res://src/levels/transition_rooms.tscn" id="13_h1car"]
@@ -594,9 +593,6 @@ offset_right = 35857.0
 offset_bottom = 14102.0
 color = Color(0, 0, 0, 1)
 
-[node name="monster" parent="lvl4" unique_id=1259109965 instance=ExtResource("10_41y7b")]
-position = Vector2(18072, 2141)
-
 [node name="platforming" type="Node2D" parent="lvl4" unique_id=1642986404]
 
 [node name="3platformblueprint" parent="lvl4/platforming" unique_id=705479190 instance=ExtResource("32_f3u0r")]
@@ -758,7 +754,7 @@ texture = SubResource("GradientTexture2D_f4kdv")
 layout_mode = 0
 offset_left = 374.0
 offset_top = 181.0
-offset_right = 14968.754
+offset_right = 6996.0625
 offset_bottom = 6173.0
 texture = SubResource("GradientTexture2D_tkwxf")
 
@@ -1771,7 +1767,7 @@ offset_right = 589.7324
 offset_bottom = -2275.7617
 theme_override_colors/default_color = Color(0.2592937, 0.2592937, 0.2592937, 1)
 theme_override_font_sizes/normal_font_size = 55
-text = "$_"
+text = "."
 horizontal_alignment = 3
 vertical_alignment = 1
 

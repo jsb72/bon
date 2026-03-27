@@ -3,11 +3,3 @@ res://addons/phantom_camera/themes/theme.tres
 res://shaders/damage_impact.gdshader
 res://shaders/verticalwhiterain.gdshader
 res://shaders/starfield.gdshader
-res://src/global.gd
-res://src/levels/room_blueprint.gd
-res://src/accueil.tscn
-res://src/player/player.gd
-res://src/platforms/laser_trap.tscn
-res://src/platforms/laser_trap.gd
-res://src/player/player.tscn
-res://src/player/states/wall_jump_state.gd

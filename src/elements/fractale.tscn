@@ -149,6 +149,7 @@ _data = {
 size = Vector2(42, 36)
 
 [node name="fractale" type="Node2D" unique_id=442593888]
+modulate = Color(0.17997457, 0.17997457, 0.17997457, 1)
 script = ExtResource("1_i6y4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=861767194]
