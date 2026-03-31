@@ -353,6 +353,9 @@ func apply_stretch() -> void:
 @onready var jump_particle: CPUParticles2D = $jump_particle
 @onready var ground_particle: CPUParticles2D = $ground_particle
 @onready var slide_particle: CPUParticles2D = $slide_particle
+@onready var run_particle: CPUParticles2D = $run_particle
+@onready var blood_particle: CPUParticles2D = $blood_particle
+
 
 @onready var cam: PhantomCamera2D = %cam
 @onready var cam_2: PhantomCamera2D = %cam2
@@ -448,13 +451,16 @@ func sprite_animation() -> void:
 			slide_particle.position.x = -13
 	else :
 		slide_particle.emitting = false
-		
+	
+	
+	run_particle.emitting = false
 	if is_on_floor() :
 		if sprite.animation=="jumpground" and sprite.is_playing():
 			pass
 		else:
 			if velocity.x < -150 or velocity.x > 150 :
 				try_play_new_anim("run")
+				run_particle.emitting = true
 			else:
 				try_play_new_anim("idle")
 	
@@ -532,7 +538,8 @@ func respawn():
 var impact_dmg:bool=false
 func impact_logic_anim():
 	if impact_dmg :
-		Engine.time_scale = 0.01
+		Engine.time_scale = 0.04
+		velocity=velocity/7
 		duplicate_sprite()
 		sprite.hide()
 		sprite_shader.show()
@@ -551,6 +558,8 @@ func duplicate_sprite():
 
 var dead_ : bool = false
 func play_death_anim():
+	
+	blood_particle.restart()
 	dead_ = true
 	sprite.hide()
 	point_light_2d.hide()
@@ -558,17 +567,20 @@ func play_death_anim():
 	
 	deathspriteanim.play("default")
 		
-	#deathspriteanim.material.set("shader_parameter/hit_effect",0.0);
-	
 	#restart_txt.show()
 	var tween = get_tree().create_tween()
 	tween.tween_property(restart_txt, "modulate", Color(1.0, 1.0, 1.0, 1.0), 10.0)
 	
+	await get_tree().create_timer(1).timeout
+	deathspriteanim.material.set("shader_parameter/hit_effect",0.0);
+	
 
 
 
-
-
+	var tween332 = get_tree().create_tween()
+	tween332.tween_property(point_light_2d, "energy", 0, 10)
+	var tween56454 = get_tree().create_tween()
+	tween56454.tween_property(point_light_2d_2, "energy", 0, 10)
 
 
 

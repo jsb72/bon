@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b5gmrdmjvgxag" path="res://sprites/rooms/ground_pt.png" id="2_wl5o2"]
 [ext_resource type="Texture2D" uid="uid://csuiewxwaqi25" path="res://sprites/btn1.png" id="4_wl5o2"]
 [ext_resource type="Texture2D" uid="uid://viwuftj2virg" path="res://sprites/btn2.png" id="5_utlp5"]
+[ext_resource type="Texture2D" uid="uid://bt5xylad21rh8" path="res://sprites/btn1gold.png" id="5_vvdvm"]
 [ext_resource type="AudioStream" uid="uid://ij7h5h6vm1qw" path="res://sounds/microwave-button-82493.mp3" id="5_wl5o2"]
+[ext_resource type="Texture2D" uid="uid://dqn5qfu82doyy" path="res://sprites/btn2gold.png" id="6_ewf5h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_utlp5"]
 size = Vector2(125, 81)
@@ -104,6 +106,22 @@ scale = Vector2(0.06, 0.06)
 texture = ExtResource("5_utlp5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2" unique_id=726804004]
+libraries/ = SubResource("AnimationLibrary_vvdvm")
+speed_scale = 4.0
+
+[node name="gold" type="Sprite2D" parent="." unique_id=130809993]
+visible = false
+position = Vector2(3.7400036, -0.19000101)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("5_vvdvm")
+
+[node name="goldtop" type="Sprite2D" parent="." unique_id=640265032]
+visible = false
+position = Vector2(3.7399995, -0.18999481)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("6_ewf5h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="goldtop" unique_id=1353871432]
 libraries/ = SubResource("AnimationLibrary_vvdvm")
 speed_scale = 4.0
 

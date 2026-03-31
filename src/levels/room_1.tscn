@@ -23,6 +23,9 @@ size = Vector2(1818.8354, 8.470444)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_weegy"]
 size = Vector2(1218.7242, 21.435913)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wdfw"]
+size = Vector2(1254, 68.20001)
+
 [node name="room_1" type="Node2D" unique_id=424883610]
 metadata/_edit_horizontal_guides_ = [66.0]
 
@@ -62,6 +65,14 @@ shape = SubResource("RectangleShape2D_cjupx")
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=325458146]
 position = Vector2(1328.4308, 76.72051)
 shape = SubResource("RectangleShape2D_weegy")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1418356980]
+position = Vector2(-867.4264, -253.0864)
+shape = SubResource("RectangleShape2D_1wdfw")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1664878322]
+position = Vector2(1316.891, -253.0864)
+shape = SubResource("RectangleShape2D_1wdfw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1733049233]
 visible = false

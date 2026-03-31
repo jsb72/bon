@@ -17,7 +17,9 @@
 [ext_resource type="Script" uid="uid://de7am2l57juc4" path="res://src/player/sprite.gd" id="14_5efpn"]
 [ext_resource type="AudioStream" uid="uid://bdy3mdrl28qmq" path="res://sounds/hero_land_soft.wav" id="14_5shm8"]
 [ext_resource type="AudioStream" uid="uid://cqr02pa8h5tob" path="res://sounds/hero_wall_jump.wav" id="15_5efpn"]
+[ext_resource type="PackedScene" uid="uid://cv2bwoqw07lnb" path="res://src/particles/run_particle.tscn" id="15_j2873"]
 [ext_resource type="AudioStream" uid="uid://bdcg2t8w75wa8" path="res://sounds/hero_dash.wav" id="16_4uy46"]
+[ext_resource type="PackedScene" uid="uid://cvsfd3471pa4e" path="res://src/particles/blood_particle.tscn" id="16_dpt0q"]
 [ext_resource type="Texture2D" uid="uid://bsromjf6nk2b6" path="res://sprites/slide_animation_issou.png" id="16_vwi60"]
 [ext_resource type="AudioStream" uid="uid://bpabs1jo2k3i7" path="res://sounds/hero_wall_slide.wav" id="17_k60ra"]
 [ext_resource type="AudioStream" uid="uid://bk1u2t0pf6uu3" path="res://sounds/hero_run_footsteps_stone.wav" id="18_a4vah"]
@@ -476,7 +478,7 @@ animations = [{
 shader = ExtResource("18_o04tx")
 shader_parameter/hit_effect = 0.50000002375
 shader_parameter/shake_intensity = 10.0
-shader_parameter/flash_speed = 600.0
+shader_parameter/flash_speed = 400.0
 shader_parameter/flash_color = Color(1, 0, 0, 1)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dpt0q"]
@@ -609,10 +611,10 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2873"]
 shader = ExtResource("18_o04tx")
-shader_parameter/hit_effect = 0.1850000087875
+shader_parameter/hit_effect = 1.0
 shader_parameter/shake_intensity = 2.0
 shader_parameter/flash_speed = 10.0
-shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/flash_color = Color(0.4745098, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bw7q3"]
 atlas = ExtResource("14_4uy46")
@@ -680,7 +682,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -856,6 +858,15 @@ one_shot = true
 position = Vector2(-13, -12)
 emitting = false
 
+[node name="jump_particle" parent="." unique_id=842905782 instance=ExtResource("19_vwi60")]
+
+[node name="ground_particle" parent="." unique_id=1979884965 instance=ExtResource("20_o04tx")]
+
+[node name="run_particle" parent="." unique_id=247846387 instance=ExtResource("15_j2873")]
+
+[node name="blood_particle" parent="." unique_id=1148518955 instance=ExtResource("16_dpt0q")]
+position = Vector2(0, -32)
+
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=969411766]
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
@@ -895,20 +906,13 @@ stream = SubResource("AudioStreamRandomizer_xmpm3")
 [node name="run_sound" type="AudioStreamPlayer" parent="." unique_id=335528450]
 stream = SubResource("AudioStreamRandomizer_h0enb")
 
-[node name="jump_particle" parent="." unique_id=842905782 instance=ExtResource("19_vwi60")]
-
-[node name="ground_particle" parent="." unique_id=1979884965 instance=ExtResource("20_o04tx")]
-
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=479851347]
 position = Vector2(0, -32)
-color = Color(1.3945211, 1.3945211, 1.3945211, 1)
-energy = 0.8
 texture = SubResource("GradientTexture2D_hja65")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1117608192]
 position = Vector2(0, -41)
-color = Color(1.3945211, 1.3945211, 1.3945211, 1)
-energy = 0.8
+color = Color(1.1291975, 1.1291975, 1.1291975, 1)
 texture = SubResource("GradientTexture2D_5shm8")
 texture_scale = 17.35
 
@@ -942,7 +946,6 @@ material = SubResource("ShaderMaterial_j2873")
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_tjw5d")
-animation = &"wall_only"
 
 [node name="restart_txt" type="Node2D" parent="." unique_id=1599983111]
 modulate = Color(1, 1, 1, 0)
@@ -960,7 +963,7 @@ offset_left = -224.0
 offset_top = -150.0
 offset_right = 225.0
 offset_bottom = -101.0
-theme_override_colors/default_color = Color(1, 0, 0, 1)
+theme_override_colors/default_color = Color(0.5058824, 0.078431375, 0.14901961, 1)
 theme_override_font_sizes/normal_font_size = 27
 text = "PRESS START TO RELOAD"
 horizontal_alignment = 1

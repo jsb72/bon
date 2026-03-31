@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bhno22n7k5cmv" path="res://src/elements/portal.tscn" id="9_anba5"]
 [ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="10_lory2"]
 [ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="11_88ojq"]
+[ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="11_nvtr1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2xyl"]
 shader = ExtResource("2_m2xyl")
@@ -29,6 +30,16 @@ shader_parameter/progress = 0.9600000456
 shader_parameter/y_offset = 0.0
 shader_parameter/fixed_edge_size = 0.5
 shader_parameter/noise_scale = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_88ojq"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nvtr1"]
+gradient = SubResource("Gradient_88ojq")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.8)
+metadata/_snap_enabled = true
 
 [sub_resource type="Resource" id="Resource_88ojq"]
 script = ExtResource("7_anba5")
@@ -54,7 +65,6 @@ size = Vector2(1910, 1998)
 size = Vector2(609.5, 501)
 
 [node name="meta_room_piece" type="Node2D" unique_id=1053535631]
-position = Vector2(0, -1)
 script = ExtResource("1_u6kd6")
 
 [node name="room_piece" parent="." unique_id=1832363316 instance=ExtResource("1_pvq73")]
@@ -125,65 +135,95 @@ position = Vector2(-1999, 2000)
 [node name="T1" type="Node2D" parent="." unique_id=62797182]
 
 [node name="1" type="Node2D" parent="T1" unique_id=1775674601]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="T1/1" unique_id=473259651]
 material = SubResource("ShaderMaterial_m2xyl")
-offset_left = -24.0
+offset_left = -19.0
 offset_top = 695.0
-offset_right = 2034.0
+offset_right = 2026.0
 offset_bottom = 3331.0
 
 [node name="2" type="Node2D" parent="T1" unique_id=814695952]
-visible = false
 position = Vector2(2057, -224.99997)
 rotation = 1.0995574
 
 [node name="ColorRect2" type="ColorRect" parent="T1/2" unique_id=1340089854]
 material = SubResource("ShaderMaterial_m2xyl")
-offset_left = -291.7638
+offset_left = -263.1477
 offset_top = -267.0
-offset_right = 1989.5573
+offset_right = 1979.6697
 offset_bottom = 2369.0
 
-[node name="3" type="Node2D" parent="T1" unique_id=1443142301]
+[node name="PointLight2D" type="PointLight2D" parent="T1/2" unique_id=1283827372]
 visible = false
+position = Vector2(1975.0219, 1051.217)
+rotation = -1.0995574
+texture = SubResource("GradientTexture2D_nvtr1")
+
+[node name="PointLight2D2" type="PointLight2D" parent="T1/2" unique_id=598973795]
+visible = false
+position = Vector2(1054.2783, 2864.8865)
+rotation = -1.0995574
+texture = SubResource("GradientTexture2D_nvtr1")
+
+[node name="PointLight2D3" type="PointLight2D" parent="T1/2" unique_id=968944266]
+visible = false
+position = Vector2(-256.6454, 1052.1646)
+rotation = -1.0995574
+texture = SubResource("GradientTexture2D_nvtr1")
+
+[node name="3" type="Node2D" parent="T1" unique_id=1443142301]
 position = Vector2(-809, 1199)
 rotation = -1.0995574
 
 [node name="ColorRect2" type="ColorRect" parent="T1/3" unique_id=1915289263]
 material = SubResource("ShaderMaterial_m2xyl")
-offset_left = -352.01175
+offset_left = -366.74307
 offset_top = -241.51341
-offset_right = 1901.346
+offset_right = 1875.5795
 offset_bottom = 2394.4866
 
 [node name="T2" type="Node2D" parent="." unique_id=1223878335]
 
 [node name="1" type="Node2D" parent="T2" unique_id=1235090269]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="T2/1" unique_id=1948505944]
 material = SubResource("ShaderMaterial_m2xyl")
-offset_left = -13.0
+offset_left = -16.0
 offset_top = -306.0
-offset_right = 2015.0
+offset_right = 2009.0
 offset_bottom = 2330.0
 
 [node name="2" type="Node2D" parent="T2" unique_id=1664038340]
-visible = false
 position = Vector2(2012.9999, -228)
 rotation = 1.0995574
 
 [node name="ColorRect2" type="ColorRect" parent="T2/2" unique_id=351221809]
 material = SubResource("ShaderMaterial_m2xyl")
-offset_left = 170.0113
+offset_left = 183.80476
 offset_top = 1051.8254
 offset_right = 2418.041
 offset_bottom = 3687.8254
 
-[node name="3" type="Node2D" parent="T2" unique_id=2080613567]
+[node name="PointLight2D" type="PointLight2D" parent="T2/2" unique_id=2069192773]
 visible = false
+position = Vector2(191.33427, 2366.8333)
+rotation = -1.0995574
+texture = SubResource("GradientTexture2D_nvtr1")
+
+[node name="PointLight2D2" type="PointLight2D" parent="T2/2" unique_id=1032711341]
+visible = false
+position = Vector2(1105.6711, 572.34607)
+rotation = -1.0995574
+texture = SubResource("GradientTexture2D_nvtr1")
+
+[node name="PointLight2D3" type="PointLight2D" parent="T2/2" unique_id=28732076]
+visible = false
+position = Vector2(2404.2058, 2367.532)
+rotation = -1.0995574
+texture = SubResource("GradientTexture2D_nvtr1")
+
+[node name="3" type="Node2D" parent="T2" unique_id=2080613567]
 position = Vector2(-884, 1365)
 rotation = -1.0995574
 
@@ -191,7 +231,7 @@ rotation = -1.0995574
 material = SubResource("ShaderMaterial_m2xyl")
 offset_left = -600.8004
 offset_top = 1096.2408
-offset_right = 1646.5629
+offset_right = 1628.2133
 offset_bottom = 3732.2407
 
 [node name="buttons" type="Node2D" parent="." unique_id=1834316626]
@@ -490,6 +530,24 @@ offset_top = 3462.0
 offset_right = 4676.0
 offset_bottom = 13545.0
 color = Color(0.49803922, 0.49803922, 0.49803922, 1)
+
+[node name="platform" parent="." unique_id=1968047125 instance=ExtResource("11_nvtr1")]
+position = Vector2(-219, 1234)
+
+[node name="platform2" parent="." unique_id=1184740725 instance=ExtResource("11_nvtr1")]
+position = Vector2(200, 1234)
+rotation = -0.13962634
+
+[node name="platform3" parent="." unique_id=783809365 instance=ExtResource("11_nvtr1")]
+position = Vector2(1755, 1228)
+rotation = 0.21118484
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1815644782]
+offset_left = -376.0
+offset_top = 966.0
+offset_right = -336.0
+offset_bottom = 1006.0
+color = Color(1, 0, 0, 1)
 
 [connection signal="body_entered" from="buttons/button" to="." method="_on_button_body_entered1"]
 [connection signal="body_entered" from="buttons/button2" to="." method="_on_button_2_body_entered3"]

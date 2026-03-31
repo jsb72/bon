@@ -13,7 +13,7 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if animated_sprite_2d.animation!="dead": animated_sprite_2d.play("dead")
 
-	if animated_sprite_2d.animation!="dead":
+	if animated_sprite_2d.animation!="dead" or 1:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta

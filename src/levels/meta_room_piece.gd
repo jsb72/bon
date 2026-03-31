@@ -17,7 +17,12 @@ var zoom_true :bool=false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	t1_1.hide()
+	t1_2.hide()
+	t1_3.hide()
+	t2_1.hide()
+	t2_2.hide()
+	t2_3.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

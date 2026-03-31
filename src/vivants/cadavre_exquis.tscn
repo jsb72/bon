@@ -79,6 +79,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1fgi"]
+size = Vector2(57.164993, 18.263336)
+
 [node name="cadavreplayer" type="CharacterBody2D" unique_id=1958468112]
 script = ExtResource("1_k1fgi")
 
@@ -86,6 +89,6 @@ script = ExtResource("1_k1fgi")
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_8f2ln")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1304099403]
-position = Vector2(-19.388771, 30.863754)
-polygon = PackedVector2Array(49.47541, -15.004265, 53.23446, 4.3844986, -6.5146103, 4.3844986, 25.931908, -13.421509)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781205588]
+position = Vector2(4.550102, 25.753387)
+shape = SubResource("RectangleShape2D_k1fgi")
