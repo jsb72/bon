@@ -965,7 +965,7 @@ offset_right = 225.0
 offset_bottom = -101.0
 theme_override_colors/default_color = Color(0.5058824, 0.078431375, 0.14901961, 1)
 theme_override_font_sizes/normal_font_size = 27
-text = "PRESS START TO RELOAD"
+text = "PRESS START OR RAGE QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
 

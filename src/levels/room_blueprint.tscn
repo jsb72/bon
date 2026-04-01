@@ -1126,7 +1126,7 @@ offset_bottom = 2732.2651
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 72
 text = " 
-                             IT only requires one signal"
+                             IT only requires one button to reload"
 
 [node name="door_reverse" parent="lvl4" unique_id=1047860162 instance=ExtResource("15_wxahx")]
 position = Vector2(26042, 2488)

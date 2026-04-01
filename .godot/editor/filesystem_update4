@@ -1,4 +1,4 @@
-res://src/player/player.tscn
+res://src/levels/room_blueprint.tscn
 res://addons/phantom_camera/themes/theme.tres
 res://shaders/damage_impact.gdshader
 res://shaders/starfield.gdshader
@@ -6,7 +6,4 @@ res://shaders/verticalwhiterain.gdshader
 res://shaders/vhs.gdshader
 res://shaders/fog.gdshader
 res://shaders/screen_off.gdshader
-res://src/global.gd
-res://src/particles/black_particule.tscn
-res://src/particles/black_particule.gd
-res://src/levels/room_blueprint.tscn
+res://src/player/player.tscn
