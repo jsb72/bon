@@ -70,7 +70,7 @@ res://src/particles/slide_particle.tscn::c7ba67441633b97e3a27d13ef66aa4ef::17749
 res://src/platforms/3_platformblueprint.tscn::3b7f808408be975769e069f97b9b1286::1773838413::res://.godot/exported/133200997/export-8166f61f74cbe61bb75f1555c2dbaa88-3_platformblueprint.scn
 res://src/platforms/platform.tscn::eec806449129de95e40ab4dc41b33ad3::1773838413::res://.godot/exported/133200997/export-98ee12e4cb4fe4d6ecf8b04a97c29188-platform.scn
 res://src/platforms/pt_blueprint.tscn::4d7d0fdcd902267a2932e360f865351a::1774541172::res://.godot/exported/133200997/export-e59d137bc12bf4119ab3a8b9d8e222f7-pt_blueprint.scn
-res://src/player/player.tscn::b7e7976ef9264a03116391625e7e85c3::1775038375::res://.godot/exported/133200997/export-e6d031b4b01e7311dce0bbd1f2b58226-player.scn
+res://src/player/player.tscn::56e30c8947970c197bf06433f6d88155::1775042482::res://.godot/exported/133200997/export-e6d031b4b01e7311dce0bbd1f2b58226-player.scn
 res://src/player/player_adding.tscn::b9f482a34b9be460f858b7b5bfea09d4::1773838413::res://.godot/exported/133200997/export-93888cec49933f4ed6722af45c58c6f4-player_adding.scn
 res://src/tentacle/scenes/arm.tscn::53f14651a35ec17265f1fc79b215614b::1773838413::res://.godot/exported/133200997/export-56632c1db10d0924db1f411a1bd4fa12-arm.scn
 res://src/tentacle/scenes/arm_target.tscn::058a6d47ec8ab2d9f9a06c45ba39bab7::1773838413::res://.godot/exported/133200997/export-5a9e6dccd8797686625874eba7d0d33c-arm_target.scn
