@@ -101,6 +101,9 @@ var _on_wall: bool = false: # This variable mustn't be edited manually
 
 var can_double_jump : bool = true
 
+func _ready() -> void:
+	pass
+	
 func _physics_process(_delta: float) -> void:
 	_on_wall = is_on_wall()
 	
@@ -469,7 +472,11 @@ func sprite_animation() -> void:
 			try_play_new_anim("sliding_gemini")
 		else:
 			try_play_new_anim("jumpdown")"""
-		try_play_new_anim("jumpdown")
+		try_play_new_anim("robe")
+		"""if velocity.y > 500.0:
+			try_play_new_anim("robe")
+		else : 
+			try_play_new_anim("jumpdown")"""
 		en_train_de_tomber = true
 		
 	if en_train_de_tomber and is_on_floor():
@@ -478,6 +485,7 @@ func sprite_animation() -> void:
 		
 	if inside_portal:
 		try_play_new_anim("teleport")
+		
 			
 var saut_en_cours_for_sound = false
 func sound_animation() -> void:

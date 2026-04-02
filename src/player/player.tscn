@@ -24,8 +24,11 @@
 [ext_resource type="AudioStream" uid="uid://bpabs1jo2k3i7" path="res://sounds/hero_wall_slide.wav" id="17_k60ra"]
 [ext_resource type="AudioStream" uid="uid://bk1u2t0pf6uu3" path="res://sounds/hero_run_footsteps_stone.wav" id="18_a4vah"]
 [ext_resource type="Shader" uid="uid://d1cnualeuqjos" path="res://shaders/damage_impact.gdshader" id="18_o04tx"]
+[ext_resource type="Texture2D" uid="uid://c0ef4itjlu0qk" path="res://sprites/1.png" id="19_e7e1q"]
 [ext_resource type="PackedScene" uid="uid://bf78142na1p7k" path="res://src/particles/jump_particle.tscn" id="19_vwi60"]
 [ext_resource type="PackedScene" uid="uid://kur8cpiyrv8b" path="res://src/particles/ground_particle.tscn" id="20_o04tx"]
+[ext_resource type="Texture2D" uid="uid://b4m5hpycb4gx8" path="res://sprites/2.png" id="20_xmpm3"]
+[ext_resource type="Texture2D" uid="uid://bj1hydxy0kb6i" path="res://sprites/3.png" id="21_h0enb"]
 [ext_resource type="PackedScene" uid="uid://wok5htmqtlc8" path="res://src/particles/slide_particle.tscn" id="21_hja65"]
 [ext_resource type="Script" uid="uid://b6rm5gkxphdna" path="res://src/player/spritetrail.gd" id="22_5shm8"]
 [ext_resource type="Shader" uid="uid://chycd0t8penwl" path="res://shaders/teleport.gdshader" id="26_a4vah"]
@@ -116,10 +119,6 @@ region = Rect2(133, 0, 133, 133)
 atlas = ExtResource("14_4uy46")
 region = Rect2(532, 668, 133, 133)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vwi60"]
-atlas = ExtResource("14_4uy46")
-region = Rect2(665, 668, 133, 133)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_o04tx"]
 atlas = ExtResource("14_4uy46")
 region = Rect2(798, 668, 133, 133)
@@ -175,6 +174,18 @@ region = Rect2(128, 128, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpqwn"]
 atlas = ExtResource("12_jcdrv")
 region = Rect2(160, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev2c8"]
+atlas = ExtResource("19_e7e1q")
+region = Rect2(665, 665, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oug64"]
+atlas = ExtResource("20_xmpm3")
+region = Rect2(665, 665, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24txj"]
+atlas = ExtResource("21_h0enb")
+region = Rect2(665, 665, 133, 133)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e7e1q"]
 atlas = ExtResource("14_4uy46")
@@ -326,9 +337,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a4vah")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vwi60")
 }],
 "loop": false,
 "name": &"jumpdown",
@@ -390,6 +398,20 @@ animations = [{
 "loop": false,
 "name": &"pray",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev2c8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oug64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24txj")
+}],
+"loop": true,
+"name": &"robe",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -871,7 +893,7 @@ position = Vector2(0, -32)
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"idle"
+animation = &"jumpdown"
 autoplay = "idle"
 script = ExtResource("14_5efpn")
 

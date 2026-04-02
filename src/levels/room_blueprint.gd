@@ -48,6 +48,10 @@ func creer_ground():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	cam.noise.positional_noise= true
+	camoffesetbottom.noise.positional_noise= true
+	zoomcam.noise.positional_noise= true
+	
 	display_list_cadavre()
 	
 	if !Global.debug_mod: player.global_position = Vector2(0,-2871)

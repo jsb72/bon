@@ -6,3 +6,8 @@ res://shaders/verticalwhiterain.gdshader
 res://shaders/vhs.gdshader
 res://shaders/fog.gdshader
 res://shaders/screen_off.gdshader
+res://src/player/player.gd
+res://src/levels/room_blueprint.tscn
+res://src/levels/room_blueprint.gd
+res://src/vhs.tscn
+res://src/particles/black_particule.tscn
