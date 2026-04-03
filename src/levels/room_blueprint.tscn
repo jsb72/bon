@@ -117,6 +117,20 @@ metadata/_custom_type_script = "uid://dimvdouy8g0sv"
 [sub_resource type="Resource" id="Resource_5ihcl"]
 script = ExtResource("5_j2cwt")
 
+[sub_resource type="Gradient" id="Gradient_f3u0r"]
+offsets = PackedFloat32Array(0, 0.11111111, 0.22222222, 0.33333334, 0.44444445, 0.5555556, 0.6666667, 0.7777778, 0.8888889)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.36666667, 0, 1, 1, 0.8666667, 0, 1, 0.45000005, 1, 0, 1, 0, 1, 0.88333344, 1, 0, 0.10000014, 1, 1, 0.5, 0, 1, 1, 1, 0, 0.916667, 1, 1, 0, 0.016666412, 1)
+metadata/_snap_enabled = true
+metadata/_snap_count = 9
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qrlky"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_01erx"]
+width = 4096
+height = 2048
+noise = SubResource("FastNoiseLite_qrlky")
+color_ramp = SubResource("Gradient_f3u0r")
+
 [sub_resource type="Gradient" id="Gradient_k2shy"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 
@@ -137,20 +151,6 @@ size = Vector2(4887.91, 278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6nwfb"]
 size = Vector2(3.4363708, 1851.0034)
-
-[sub_resource type="Gradient" id="Gradient_f3u0r"]
-offsets = PackedFloat32Array(0, 0.11111111, 0.22222222, 0.33333334, 0.44444445, 0.5555556, 0.6666667, 0.7777778, 0.8888889)
-colors = PackedColorArray(1, 0, 0, 1, 1, 0.36666667, 0, 1, 1, 0.8666667, 0, 1, 0.45000005, 1, 0, 1, 0, 1, 0.88333344, 1, 0, 0.10000014, 1, 1, 0.5, 0, 1, 1, 1, 0, 0.916667, 1, 1, 0, 0.016666412, 1)
-metadata/_snap_enabled = true
-metadata/_snap_count = 9
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qrlky"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_01erx"]
-width = 4096
-height = 2048
-noise = SubResource("FastNoiseLite_qrlky")
-color_ramp = SubResource("Gradient_f3u0r")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7rpky"]
 frequency = 0.0457
@@ -667,6 +667,42 @@ process_physics_priority = 300
 script = ExtResource("6_ltygr")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=871583585]
+offset_left = -26244.932
+offset_top = -24736.348
+offset_right = 38550.18
+offset_bottom = -6947.7734
+
+[node name="gradient" type="TextureRect" parent="." unique_id=1127690505]
+offset_left = -8098.9033
+offset_top = -11188.589
+offset_right = 8285.096
+offset_bottom = -6947.589
+texture = SubResource("NoiseTexture2D_01erx")
+
+[node name="gradient2" type="TextureRect" parent="." unique_id=241595726]
+offset_left = 20310.125
+offset_top = -11163.041
+offset_right = 36694.125
+offset_bottom = -6922.041
+texture = SubResource("NoiseTexture2D_01erx")
+
+[node name="gradient3" type="TextureRect" parent="." unique_id=1231656431]
+offset_left = -16532.738
+offset_top = -14144.928
+offset_right = -148.73828
+offset_bottom = -9903.928
+texture = SubResource("NoiseTexture2D_01erx")
+
+[node name="Label" type="Label" parent="." unique_id=454803724]
+offset_left = -16356.641
+offset_top = -14913.406
+offset_right = -12633.641
+offset_bottom = -14231.406
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 500
+text = "N'oublie jamais"
+
 [node name="lvl8" type="Node2D" parent="." unique_id=1091078577]
 
 [node name="ColorRect" type="ColorRect" parent="lvl8" unique_id=2104195032]
@@ -1151,7 +1187,7 @@ offset_bottom = 2732.2651
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 72
 text = " 
-                             IT only requires one button"
+                             IT has always required one button"
 
 [node name="door_reverse" parent="lvl4" unique_id=1047860162 instance=ExtResource("15_wxahx")]
 position = Vector2(26042, 2488)
@@ -1898,12 +1934,6 @@ rotation = 0.6859144
 is_rotatingg = false
 
 [node name="SECRET" type="Node2D" parent="lvl1" unique_id=1558978363]
-
-[node name="ColorRect" type="ColorRect" parent="lvl1/SECRET" unique_id=871583585]
-offset_left = -26244.932
-offset_top = -24736.348
-offset_right = 38550.18
-offset_bottom = -6947.7734
 
 [node name="univers" parent="lvl1/SECRET" unique_id=29536121 instance=ExtResource("16_tkwxf")]
 position = Vector2(14342.731, -4857.785)
@@ -3060,6 +3090,9 @@ position = Vector2(7670.2383, 97.39691)
 
 [node name="pt_blueprint3" parent="lvl1" unique_id=431420207 instance=ExtResource("16_nfd4m")]
 position = Vector2(7696.0596, 49.480957)
+
+[node name="damage_block" parent="lvl1" unique_id=487159233 instance=ExtResource("46_7f7j5")]
+position = Vector2(5160.899, -1235.4072)
 
 [node name="lvl2" type="Node2D" parent="." unique_id=2029691245]
 visible = false

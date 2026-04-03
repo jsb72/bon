@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 		sprite_2d_3.visible = true
 	
 	if !Global.door2_opened:
-		if player.global_position.x > global_position.x - (400+267) and Global.nb_fractal ==3 :
+		if player.global_position.x > global_position.x - (400+267) and Global.nb_fractal >=3 :
 			Global.door2_opened= true
 			
 			
