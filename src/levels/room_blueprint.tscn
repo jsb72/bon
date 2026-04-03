@@ -695,13 +695,13 @@ offset_bottom = -9903.928
 texture = SubResource("NoiseTexture2D_01erx")
 
 [node name="Label" type="Label" parent="." unique_id=454803724]
-offset_left = -16356.641
-offset_top = -14913.406
-offset_right = -12633.641
-offset_bottom = -14231.406
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 500
-text = "N'oublie jamais"
+offset_left = 11668.154
+offset_top = -15468.557
+offset_right = 16870.154
+offset_bottom = -14106.557
+theme_override_colors/font_color = Color(0.66656864, 0.6665687, 0.66656864, 1)
+theme_override_font_sizes/font_size = 1000
+text = "IT is wrong"
 
 [node name="lvl8" type="Node2D" parent="." unique_id=1091078577]
 
@@ -1828,10 +1828,10 @@ text = "La réalité est une conspiration Reality is FAKE Tout est faux Seul le 
 horizontal_alignment = 3
 
 [node name="ouvriront" type="RichTextLabel" parent="lvl1" unique_id=1013986313]
-offset_left = 2416.8962
-offset_top = -1092.6471
-offset_right = 2915.381
-offset_bottom = -952.6471
+offset_left = 1284.963
+offset_top = -978.12146
+offset_right = 1783.4479
+offset_bottom = -838.12146
 theme_override_colors/default_color = Color(1.6197081, 1.6197081, 1.6197081, 1)
 theme_override_font_sizes/normal_font_size = 18
 text = "Les pièces du fractal ouvriront la Voie"
@@ -3093,6 +3093,12 @@ position = Vector2(7696.0596, 49.480957)
 
 [node name="damage_block" parent="lvl1" unique_id=487159233 instance=ExtResource("46_7f7j5")]
 position = Vector2(5160.899, -1235.4072)
+
+[node name="damage_block2" parent="lvl1" unique_id=2116588 instance=ExtResource("46_7f7j5")]
+position = Vector2(5018.8813, -1393.5302)
+
+[node name="damage_block3" parent="lvl1" unique_id=695524828 instance=ExtResource("46_7f7j5")]
+position = Vector2(5302.917, -1393.5302)
 
 [node name="lvl2" type="Node2D" parent="." unique_id=2029691245]
 visible = false

@@ -6,5 +6,3 @@ res://shaders/verticalwhiterain.gdshader
 res://shaders/vhs.gdshader
 res://shaders/fog.gdshader
 res://shaders/screen_off.gdshader
-res://src/levels/door.gd
-res://src/levels/door_reverse.gd
