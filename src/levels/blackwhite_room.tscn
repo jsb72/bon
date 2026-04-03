@@ -1,22 +1,8 @@
 [gd_scene format=3 uid="uid://dhmslis0y0ejr"]
 
-[ext_resource type="PackedScene" uid="uid://3t2f2pn81x60" path="res://src/elements/univers.tscn" id="1_l88fe"]
 [ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="1_tr5ni"]
-[ext_resource type="Texture2D" uid="uid://bsairk87mham4" path="res://sprites/rooms/blackwhite.png" id="1_u4oek"]
-[ext_resource type="Texture2D" uid="uid://wabd2besh7bm" path="res://sprites/rooms/blackwhite2.png" id="2_uyhl4"]
+[ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="3_4yfx7"]
 [ext_resource type="PackedScene" uid="uid://do35bbyy0qllr" path="res://src/platforms/platform.tscn" id="9_v5qbg"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qshff"]
-size = Vector2(2234.136, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l88fe"]
-size = Vector2(1070.5363, 10.375866)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4oek"]
-size = Vector2(93.50003, 392.69998)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tr5ni"]
-size = Vector2(1357.6199, 132.79912)
 
 [sub_resource type="Animation" id="Animation_l88fe"]
 length = 0.001
@@ -57,39 +43,6 @@ _data = {
 
 [node name="blackwhite_room" type="Node2D" unique_id=1082967431]
 
-[node name="univers" parent="." unique_id=1846410792 instance=ExtResource("1_l88fe")]
-position = Vector2(243.60287, -218)
-scale = Vector2(0.09020833, 0.09020833)
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=680059496]
-position = Vector2(2.5297852, -213.62506)
-scale = Vector2(0.32538244, 0.3253823)
-texture = ExtResource("1_u4oek")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1739789113]
-position = Vector2(2737.9846, -213.62505)
-scale = Vector2(0.325, 0.325)
-texture = ExtResource("2_uyhl4")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1892136155]
-position = Vector2(32.529785, -413.62503)
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1277190941]
-position = Vector2(2787.5234, 404.5)
-shape = SubResource("RectangleShape2D_qshff")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=856511714]
-position = Vector2(-355.70004, 400.87552)
-shape = SubResource("RectangleShape2D_l88fe")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1056144077]
-position = Vector2(-589.97906, 203.75978)
-shape = SubResource("RectangleShape2D_u4oek")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=2039117102]
-position = Vector2(3066.7793, 70.5126)
-shape = SubResource("RectangleShape2D_tr5ni")
-
 [node name="platform" parent="." unique_id=1968047125 instance=ExtResource("9_v5qbg")]
 position = Vector2(381.7179, 8.794861)
 scale = Vector2(2, 2)
@@ -98,20 +51,6 @@ scale = Vector2(2, 2)
 libraries/ = SubResource("AnimationLibrary_tr5ni")
 autoplay = &"new_animation"
 speed_scale = 0.2
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1200926515]
-z_index = 10
-offset_left = -558.59674
-offset_top = -419.94797
-offset_right = -552.11255
-offset_bottom = -8.173706
-color = Color(0, 0, 0, 1)
-
-[node name="Line2D" type="Line2D" parent="." unique_id=1298705898]
-z_index = 11
-position = Vector2(-109.80737, 1.4641113)
-points = PackedVector2Array(3208.4236, -666.91406, 3211.3518, 237.89978)
-default_color = Color(0, 0, 0, 1)
 
 [node name="pt_blueprint5" parent="." unique_id=920875960 instance=ExtResource("1_tr5ni")]
 position = Vector2(-901.1026, 149.06097)
@@ -141,13 +80,40 @@ position = Vector2(-730.9247, -90.578705)
 position = Vector2(-730.9247, -139.82571)
 
 [node name="pt_blueprint12" parent="." unique_id=507113143 instance=ExtResource("1_tr5ni")]
-position = Vector2(-643.0787, -141.15671)
+position = Vector2(-644.44464, -141.15671)
 
 [node name="pt_blueprint13" parent="." unique_id=1304675152 instance=ExtResource("1_tr5ni")]
-position = Vector2(-643.0787, -189.07272)
+position = Vector2(-644.44464, -189.07272)
 
 [node name="pt_blueprint14" parent="." unique_id=1246221692 instance=ExtResource("1_tr5ni")]
-position = Vector2(-643.0787, -236.98874)
+position = Vector2(-644.44464, -236.98874)
 
 [node name="pt_blueprint15" parent="." unique_id=1423164278 instance=ExtResource("1_tr5ni")]
-position = Vector2(-643.0787, -286.23575)
+position = Vector2(-644.44464, -286.23575)
+
+[node name="pt_blueprint24" parent="." unique_id=869863862 instance=ExtResource("1_tr5ni")]
+position = Vector2(-510.52594, -82.76355)
+
+[node name="pt_blueprint25" parent="." unique_id=1285517698 instance=ExtResource("1_tr5ni")]
+position = Vector2(-510.52594, -130.67957)
+
+[node name="pt_blueprint27" parent="." unique_id=575818616 instance=ExtResource("1_tr5ni")]
+position = Vector2(-427.79865, -130.67957)
+
+[node name="pt_blueprint26" parent="." unique_id=165651443 instance=ExtResource("1_tr5ni")]
+position = Vector2(-510.52594, -179.92657)
+
+[node name="3platformblueprint" parent="." unique_id=853668133 instance=ExtResource("3_4yfx7")]
+position = Vector2(-323.43298, -26.620056)
+
+[node name="3platformblueprint2" parent="." unique_id=1446602168 instance=ExtResource("3_4yfx7")]
+position = Vector2(1724.9325, -26.620056)
+
+[node name="3platformblueprint5" parent="." unique_id=673725549 instance=ExtResource("3_4yfx7")]
+position = Vector2(3535.6702, -26.620056)
+
+[node name="3platformblueprint3" parent="." unique_id=1474372304 instance=ExtResource("3_4yfx7")]
+position = Vector2(2304.0283, -78.49481)
+
+[node name="3platformblueprint4" parent="." unique_id=811186568 instance=ExtResource("3_4yfx7")]
+position = Vector2(2884.0754, -123.7121)

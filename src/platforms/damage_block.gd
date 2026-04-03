@@ -4,6 +4,7 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var sprite_2d_2: Sprite2D = $Sprite2D2
 
+@onready var player: Player = %Player
 
 @onready var timer: Timer = $Timer
 @onready var reloadtimer: Timer = $reloadtimer
@@ -27,7 +28,7 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Player:
-		Global.list_des_morts.push_back(body.global_position)
+		#Global.list_des_morts.push_back(body.global_position)
 		timer.start()
 		reloadtimer.start()
 		audio_stream_player_2d.play()
@@ -42,4 +43,11 @@ func _on_timer_timeout() -> void:
 
 
 func _on_reloadtimer_timeout() -> void:
+	player.dead_ = false
+	player.deathspriteanim.hide()
+	player.respawn()
+	
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
 	pass

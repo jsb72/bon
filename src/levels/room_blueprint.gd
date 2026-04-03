@@ -3,6 +3,7 @@ extends Node2D
 
 @onready var ground: Sprite2D = $lvl1/ground
 
+
 @onready var zoomcam: PhantomCamera2D = $zoomcam
 @onready var cam: PhantomCamera2D = %cam
 @onready var cam_2: PhantomCamera2D = %cam2
@@ -25,6 +26,9 @@ var lvl_2_loaded:bool = false
 
 
 @onready var cadavre: AnimatedSprite2D = $cadavre
+
+@onready var fractale_ciel: RigidBody2D = $fractale_ciel
+
 
 func display_list_cadavre():
 	for cadavre_elem in Global.list_des_morts:
@@ -126,6 +130,15 @@ func slowvoid_logic():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 var intro_visible : bool = true
 func _process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("start"):
+		var f_ = fractale_ciel.duplicate()
+		f_.global_position = player.global_position
+		f_.global_position.y -= 200
+		f_.process_mode = Node.PROCESS_MODE_INHERIT
+		f_.visible = true
+		$".".add_child(f_)  
+	
 	if player.global_position.x > 14000:
 		blackgroundparticle.hide()
 	else:
@@ -358,3 +371,13 @@ func _on_bouton_o_rzone_body_exited(body: Node2D) -> void:
 		tween.tween_property(player.point_light_2d, "energy", 1.0, 1.0)
 		var tween2 = get_tree().create_tween()
 		tween2.tween_property(player.point_light_2d_2, "energy", 1.0, 1.0)
+
+
+func _on_novisibleplayerzone_body_entered(body: Node2D) -> void:
+	if body is Player:
+		body.sprite.hide()
+
+
+func _on_novisibleplayerzone_body_exited(body: Node2D) -> void:
+	if body is Player:
+		body.sprite.show()

@@ -64,10 +64,7 @@ _data = {
 &"disapear": SubResource("Animation_ofbnq")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6s3g"]
-size = Vector2(42, 36)
-
-[node name="fractale" type="Node2D" unique_id=442593888]
+[node name="fractale" type="RigidBody2D" unique_id=913439784]
 script = ExtResource("1_i6y4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=861767194]
@@ -80,13 +77,15 @@ libraries/ = SubResource("AnimationLibrary_wpris")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1631118199]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=868297095]
-visible = false
-shape = SubResource("RectangleShape2D_k6s3g")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=807785628]
+polygon = PackedVector2Array(-22.671669, 18.965912, 0.05593872, -20.27599, 23.11055, 18.965912)
 
 [node name="touchedsong" type="AudioStreamPlayer2D" parent="." unique_id=299576661]
 stream = ExtResource("4_46e40")
 volume_db = 4.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1400605176]
+polygon = PackedVector2Array(-21.03659, 17.821358, 0.21944427, -17.986881, 20.494423, 17.657845)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="finished" from="touchedsong" to="." method="_on_touchedsong_finished"]

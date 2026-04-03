@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bl14lcvp4g2nh"]
 
 [ext_resource type="Texture2D" uid="uid://rq2qwrrfwtuq" path="res://sprites/rooms3/room1true.png" id="2_j2aff"]
-[ext_resource type="Texture2D" uid="uid://cdp4elw5mkxg" path="res://sprites/rooms3/room2trueUNBUG.png" id="2_weegy"]
 [ext_resource type="PackedScene" uid="uid://c0g2bfslm40qt" path="res://src/platforms/pt_blueprint.tscn" id="3_1wdfw"]
 [ext_resource type="PackedScene" uid="uid://mtmitx3k0avp" path="res://src/platforms/3_platformblueprint.tscn" id="3_weegy"]
 
@@ -17,15 +16,6 @@ size = Vector2(123, 348.37494)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cks4"]
 size = Vector2(215.75256, 346.37494)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cjupx"]
-size = Vector2(1818.8354, 8.470444)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_weegy"]
-size = Vector2(1218.7242, 21.435913)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wdfw"]
-size = Vector2(1254, 68.20001)
-
 [node name="room_1" type="Node2D" unique_id=424883610]
 metadata/_edit_horizontal_guides_ = [66.0]
 
@@ -33,11 +23,6 @@ metadata/_edit_horizontal_guides_ = [66.0]
 position = Vector2(-518.3088, -381.6614)
 scale = Vector2(0.27368686, 0.27368686)
 texture = ExtResource("2_j2aff")
-
-[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1469989034]
-position = Vector2(1267.8394, -227.68967)
-scale = Vector2(0.27368686, 0.27368686)
-texture = ExtResource("2_weegy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1950227588]
 position = Vector2(-161.25256, -0.37493896)
@@ -57,22 +42,6 @@ shape = SubResource("RectangleShape2D_3hsou")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=59443795]
 position = Vector2(615.3763, 239.18747)
 shape = SubResource("RectangleShape2D_6cks4")
-
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=459936617]
-position = Vector2(-1155.4784, 71.266426)
-shape = SubResource("RectangleShape2D_cjupx")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=325458146]
-position = Vector2(1328.4308, 76.72051)
-shape = SubResource("RectangleShape2D_weegy")
-
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=1418356980]
-position = Vector2(-867.4264, -253.0864)
-shape = SubResource("RectangleShape2D_1wdfw")
-
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="StaticBody2D" unique_id=1664878322]
-position = Vector2(1316.891, -253.0864)
-shape = SubResource("RectangleShape2D_1wdfw")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1733049233]
 visible = false
@@ -114,13 +83,14 @@ position = Vector2(2908.6824, -82.4427)
 [node name="3platformblueprint" parent="." unique_id=853668133 instance=ExtResource("3_weegy")]
 position = Vector2(1787.2844, 87.62712)
 
-[node name="Line2D" type="Line2D" parent="." unique_id=489100371]
-z_index = 11
-points = PackedVector2Array(-1033.5125, -521.4949, -1031.7408, 296.9663)
-default_color = Color(0, 0, 0, 1)
+[node name="3platformblueprint2" parent="." unique_id=304707078 instance=ExtResource("3_weegy")]
+position = Vector2(-2184.255, 87.62712)
 
-[node name="Line2D2" type="Line2D" parent="." unique_id=728864978]
-z_index = 11
-position = Vector2(2186.1064, 0)
-points = PackedVector2Array(-1033.5125, -521.4949, -1031.7408, 296.9663)
-default_color = Color(0, 0, 0, 1)
+[node name="3platformblueprint3" parent="." unique_id=766430537 instance=ExtResource("3_weegy")]
+position = Vector2(-1516.6255, 19.152267)
+
+[node name="3platformblueprint4" parent="." unique_id=2065021962 instance=ExtResource("3_weegy")]
+position = Vector2(-1017.32996, -32.20369)
+
+[node name="3platformblueprint5" parent="." unique_id=1506200646 instance=ExtResource("3_weegy")]
+position = Vector2(863.7461, 28.995651)

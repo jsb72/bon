@@ -399,13 +399,15 @@ func logic_spe():
 	
 	camera_logic()
 	
-	impact_logic_anim()
+	laser_logic_anim()
 	
 	if Global.sprint_unlock:
 		sprint_logic()
 		
 	if Global.banane:banane_logic()
-			
+	
+
+	
 func camera_logic()->void:
 	if velocity.x > 0 and is_on_floor_only(): 
 		cam.priority = 1
@@ -510,13 +512,23 @@ func sound_animation() -> void:
 				ground_particle.restart()
 			
 var last_floor_pos : Vector2
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
+
 func respawn_logic():
-	if is_on_floor_only() and !impact_dmg:
+	
+	if ray_cast_2d.is_colliding():
+		#print(ray_cast_2d.get_collider().get_class())
+		var collidobj = ray_cast_2d.get_collider()
+		if collidobj is Ptblueprint :
+			print(collidobj)
+			last_floor_pos.x = collidobj.global_position.x
+			last_floor_pos.y = global_position.y
+	"""		
+	if is_on_floor_only() and !laser_dmg :
 		if velocity.x >0 :
 			last_floor_pos = position - Vector2(30,0)
 		if velocity.x <0 :
-			last_floor_pos = position + Vector2(30,0)
-		last_floor_pos = last_floor_pos + Vector2(0,-30)
+			last_floor_pos = position + Vector2(30,0)"""
 			
 @onready var animated_sprite_for_teleport_shader: AnimatedSprite2D = $AnimatedSpriteForTeleportShader
 @onready var animation_player_for_teleport_shader: AnimationPlayer = $AnimatedSpriteForTeleportShader/AnimationPlayerForTeleportShader
@@ -526,7 +538,7 @@ func respawn():
 	respawned=true
 	sprite.hide()
 	sprite_shader.hide()
-	position = last_floor_pos
+	global_position = last_floor_pos
 	velocity = Vector2(0.0,0.0)
 	await get_tree().create_timer(0.1).timeout
 	if get_facing_dir() > 0 :
@@ -543,9 +555,9 @@ func respawn():
 	
 			
 @onready var sprite_shader: AnimatedSprite2D = $SpriteShader
-var impact_dmg:bool=false
-func impact_logic_anim():
-	if impact_dmg :
+var laser_dmg:bool=false
+func laser_logic_anim():
+	if laser_dmg :
 		Engine.time_scale = 0.04
 		velocity=velocity/7
 		duplicate_sprite()
@@ -575,6 +587,7 @@ func play_death_anim():
 	
 	deathspriteanim.play("default")
 		
+	"""
 	#restart_txt.show()
 	var tween = get_tree().create_tween()
 	tween.tween_property(restart_txt, "modulate", Color(1.0, 1.0, 1.0, 1.0), 10.0)
@@ -589,7 +602,7 @@ func play_death_anim():
 	tween332.tween_property(point_light_2d, "energy", 0, 10)
 	var tween56454 = get_tree().create_tween()
 	tween56454.tween_property(point_light_2d_2, "energy", 0, 10)
-
+	"""
 
 
 

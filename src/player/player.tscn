@@ -893,8 +893,9 @@ position = Vector2(0, -32)
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_j2873")
-animation = &"jumpdown"
+animation = &"run"
 autoplay = "idle"
+frame = 2
 script = ExtResource("14_5efpn")
 
 [node name="SpriteShader" type="AnimatedSprite2D" parent="." unique_id=576551087]
@@ -991,6 +992,10 @@ theme_override_font_sizes/normal_font_size = 27
 text = "PRESS START OR RAGE QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1683301557]
+position = Vector2(0, -32)
+target_position = Vector2(0, 80)
 
 [connection signal="wall_entered" from="." to="." method="_on_wall_entered"]
 [connection signal="wall_exited" from="." to="." method="_on_wall_exited"]

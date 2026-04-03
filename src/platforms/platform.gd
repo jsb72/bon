@@ -1,3 +1,4 @@
+class_name ClassicPlatform
 extends AnimatableBody2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -10,3 +11,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	

@@ -1,6 +1,6 @@
 extends Node
 
-var debug_mod:bool=false
+var debug_mod:bool=true
 
 var nb_fractal:int = 0
 
@@ -39,11 +39,11 @@ func _process(delta: float) -> void:
 		doublejump_unlock = true
 		arc_en_ciel = true
 		blue_prince = true
-	if Input.is_action_just_pressed("start") and !buttonturnoff_activated:
+	"""if Input.is_action_just_pressed("start") and !buttonturnoff_activated:
 		get_tree().reload_current_scene()
 		nb_fractal = 0
 		banane=false
-		buttonturnoff_activated=false
+		buttonturnoff_activated=false"""
 		
 
 		

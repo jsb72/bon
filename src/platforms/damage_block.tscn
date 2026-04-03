@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://bdkn38qhpynww" path="res://sprites/rooms/dmg_block_blackFAKEFRONT.png" id="5_4mlh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnwu4"]
-size = Vector2(144.61725, 156.27995)
+size = Vector2(144.61725, 146.01677)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4mlh0"]
 streams_count = 1
 stream_0/stream = ExtResource("4_4mlh0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5vdp"]
-size = Vector2(98.36833, 131.44795)
+size = Vector2(118.02637, 131.44795)
 
 [node name="damage_block" type="Node2D" unique_id=1974418075]
 script = ExtResource("1_wnwu4")
@@ -31,7 +31,7 @@ texture = ExtResource("3_j5vdp")
 [node name="Area2D" type="Area2D" parent="." unique_id=26063363]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1698994651]
-position = Vector2(2.1543884, 0.7119217)
+position = Vector2(2.1543884, -4.41967)
 shape = SubResource("RectangleShape2D_wnwu4")
 
 [node name="Timer" type="Timer" parent="." unique_id=257263356]
@@ -45,11 +45,12 @@ volume_db = 5.0
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=577565271]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=390770647]
-position = Vector2(3.4159775, -9.953886)
+position = Vector2(1.9211426, -9.953886)
 shape = SubResource("RectangleShape2D_j5vdp")
 
 [node name="reloadtimer" type="Timer" parent="." unique_id=1072525781]
-wait_time = 5.0
+wait_time = 3.0
+one_shot = true
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=784931399]
 z_index = 500
@@ -57,5 +58,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_4mlh0")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="reloadtimer" to="." method="_on_reloadtimer_timeout"]
