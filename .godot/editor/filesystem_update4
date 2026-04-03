@@ -13,3 +13,5 @@ res://src/player/player.tscn
 res://src/player/player.gd
 res://src/levels/room_blueprint.tscn
 res://src/platforms/laser_trap.tscn
+res://src/levels/room_blueprint.gd
+res://src/global.gd

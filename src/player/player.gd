@@ -520,7 +520,6 @@ func respawn_logic():
 		#print(ray_cast_2d.get_collider().get_class())
 		var collidobj = ray_cast_2d.get_collider()
 		if collidobj is Ptblueprint :
-			print(collidobj)
 			last_floor_pos.x = collidobj.global_position.x
 			last_floor_pos.y = global_position.y
 	"""		

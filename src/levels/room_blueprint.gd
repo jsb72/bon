@@ -20,6 +20,10 @@ extends Node2D
 @onready var lvl_2: Node2D = $lvl2
 @onready var paralaxmulticlolor: Parallax2D = $lvl1/paralaxmulticlolor
 
+@onready var animparalaxburn: AnimationPlayer = $lvl1/Parallax2D/burningBG/animparalaxburn
+
+
+
 var lvl_2_loaded:bool = false
 
 @onready var blackgroundparticle: GPUParticles2D = $lvl1/Parallax2D2/GPUParticles2D
@@ -279,9 +283,17 @@ func _on_deathzone_body_entered(body: Node2D) -> void:
 
 @onready var cadavreplayer: CharacterBody2D = $cadavreplayer
 var cpt_ : int = 0
+var arcenciel_value : float = 0.819
 func _on_button_body_entered_specific_last_btn_blue_print(body: Node2D) -> void:
 	if body is Player:
-	
+		
+		arcenciel_value-=0.025
+		if arcenciel_value<0.4:
+			arcenciel_value=0.4
+		
+		var anim: Animation = animparalaxburn.get_animation("new_animation")
+		anim.track_set_key_value(0, 1, arcenciel_value)
+		
 		if danslazone7:
 			if !Global.blue_prince : Global.blue_prince = true
 			
