@@ -546,7 +546,7 @@ metadata/_snap_enabled = true
 metadata/_snap_count = 3
 
 [sub_resource type="Gradient" id="Gradient_o04tx"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5shm8"]
 gradient = SubResource("Gradient_o04tx")
@@ -930,12 +930,14 @@ stream = SubResource("AudioStreamRandomizer_xmpm3")
 stream = SubResource("AudioStreamRandomizer_h0enb")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=479851347]
+visible = false
 position = Vector2(0, -32)
 texture = SubResource("GradientTexture2D_hja65")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1117608192]
 position = Vector2(0, -41)
 color = Color(1.1291975, 1.1291975, 1.1291975, 1)
+energy = 0.0
 texture = SubResource("GradientTexture2D_5shm8")
 texture_scale = 17.35
 

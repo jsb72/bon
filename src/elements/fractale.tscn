@@ -65,6 +65,7 @@ _data = {
 }
 
 [node name="fractale" type="RigidBody2D" unique_id=913439784]
+z_index = 1
 script = ExtResource("1_i6y4e")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=861767194]

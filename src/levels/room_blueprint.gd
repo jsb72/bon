@@ -62,7 +62,7 @@ func _ready() -> void:
 	
 	display_list_cadavre()
 	
-	if !Global.debug_mod: player.global_position = Vector2(0,-2871)
+	#if !Global.debug_mod: player.global_position = Vector2(0,-2871)
 	creer_ground()
 
 	
@@ -169,10 +169,10 @@ func _process(delta: float) -> void:
 			cam_2.limit_top = -10000000
 		
 		
-		"""var tween = get_tree().create_tween()
+		var tween = get_tree().create_tween()
 		tween.tween_property(player.point_light_2d, "energy", 1.0, 10.0)
 		var tween2 = get_tree().create_tween()
-		tween2.tween_property(player.point_light_2d_2, "energy", 1.0, 10.0)"""
+		tween2.tween_property(player.point_light_2d_2, "energy", 1.0, 10.0)
 
 	if !audio_stream_player.playing:
 		audio_stream_player.play()
