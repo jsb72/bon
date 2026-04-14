@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ca0qqvc5pjlky"]
 
 [ext_resource type="Script" uid="uid://dwg2pohsrlcyf" path="res://src/elements/button.gd" id="1_ihcdu"]
-[ext_resource type="Texture2D" uid="uid://b5gmrdmjvgxag" path="res://sprites/rooms/ground_pt.png" id="2_wl5o2"]
+[ext_resource type="Texture2D" uid="uid://dlua5q00whex4" path="res://sprites/rooms/ground_ptWHITE.png" id="2_vvdvm"]
 [ext_resource type="Texture2D" uid="uid://csuiewxwaqi25" path="res://sprites/btn1.png" id="4_wl5o2"]
 [ext_resource type="Texture2D" uid="uid://viwuftj2virg" path="res://sprites/btn2.png" id="5_utlp5"]
 [ext_resource type="Texture2D" uid="uid://bt5xylad21rh8" path="res://sprites/btn1gold.png" id="5_vvdvm"]
@@ -80,12 +80,14 @@ metadata/_snap_enabled = true
 script = ExtResource("1_ihcdu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=542832843]
+process_mode = 4
+visible = false
 position = Vector2(3.046814, -3.2644348)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1241402372]
 position = Vector2(0, 38.999996)
 scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_wl5o2")
+texture = ExtResource("2_vvdvm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=545169149]
 position = Vector2(1.5, 43.252106)

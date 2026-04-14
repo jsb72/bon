@@ -1,16 +1,22 @@
 extends Node2D
 
+@export var is_rotatingg:bool=true
+@export var reverse_rotate:bool=false
+
 @onready var timer: Timer = $Timer
 @onready var player: Player = %Player
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-@export var is_rotatingg:bool=true
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if is_rotatingg:
-		animation_player.play("new_animation")
+		if reverse_rotate:
+			animation_player.play("new_animation_reverse")
+		else:
+			animation_player.play("new_animation")
+			
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

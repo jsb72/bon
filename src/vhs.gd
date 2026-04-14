@@ -1,7 +1,6 @@
 extends Node2D
-@onready var animation_player: AnimationPlayer = $CanvasLayer/turnoffscreen/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $CanvasLayer/distorsion/AnimationPlayer
 
-var turnedoff : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,8 +8,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Global.buttonturnoff_activated:
-		if !turnedoff:
-			turnedoff = true
-			animation_player.play("turnoff")
+	if Global.distorsion_screen:
+		animation_player.play("new_animation")
+		Global.distorsion_screen=false
 			

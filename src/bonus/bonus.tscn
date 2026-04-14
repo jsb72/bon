@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c84dxhfcuhtmd" path="res://sprites/sprint2.png" id="2_k404d"]
 [ext_resource type="Texture2D" uid="uid://c1pwixmon4bp2" path="res://sprites/dash1.png" id="3_yyq72"]
 [ext_resource type="Texture2D" uid="uid://ctef644vqx5ad" path="res://sprites/doublejump.png" id="4_whhxl"]
+[ext_resource type="Script" uid="uid://cv80afgvbn3p7" path="res://addons/controller_icons/objects/ControllerIconTexture.gd" id="6_1bvym"]
 
 [sub_resource type="Animation" id="Animation_yyq72"]
 length = 0.001
@@ -153,6 +154,20 @@ _data = {
 &"new_animation": SubResource("Animation_1ae7t")
 }
 
+[sub_resource type="Texture2D" id="Texture2D_1bvym"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("6_1bvym")
+path = "dash"
+metadata/_custom_type_script = "uid://cv80afgvbn3p7"
+
+[sub_resource type="Texture2D" id="Texture2D_eb3bx"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("6_1bvym")
+path = "jump"
+metadata/_custom_type_script = "uid://cv80afgvbn3p7"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ea6r3"]
 size = Vector2(41, 41)
 
@@ -209,6 +224,30 @@ vertical_alignment = 1
 [node name="text_anim" type="AnimationPlayer" parent="Node2D/info_bonus" unique_id=757014903]
 libraries/ = SubResource("AnimationLibrary_kbf15")
 speed_scale = 0.2
+
+[node name="dash_icon" type="TextureRect" parent="Node2D/info_bonus" unique_id=1167158699]
+visible = false
+z_index = 100
+z_as_relative = false
+layout_mode = 0
+offset_left = 68.0
+offset_top = 82.0
+offset_right = 168.0
+offset_bottom = 182.0
+scale = Vector2(0.3, 0.3)
+texture = SubResource("Texture2D_1bvym")
+
+[node name="jump_icon" type="TextureRect" parent="Node2D/info_bonus" unique_id=178442262]
+visible = false
+z_index = 100
+z_as_relative = false
+layout_mode = 0
+offset_left = 68.0
+offset_top = 82.0
+offset_right = 168.0
+offset_bottom = 182.0
+scale = Vector2(0.3, 0.3)
+texture = SubResource("Texture2D_eb3bx")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=993949078]
 

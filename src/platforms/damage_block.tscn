@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://bdkn38qhpynww" path="res://sprites/rooms/dmg_block_blackFAKEFRONT.png" id="5_4mlh0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnwu4"]
-size = Vector2(144.61725, 146.01677)
+size = Vector2(144.96613, 156.89629)
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4mlh0"]
 streams_count = 1
 stream_0/stream = ExtResource("4_4mlh0")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5vdp"]
-size = Vector2(118.02637, 131.44795)
+size = Vector2(127.33998, 130.35704)
 
 [node name="damage_block" type="Node2D" unique_id=1974418075]
 script = ExtResource("1_wnwu4")
@@ -31,7 +31,7 @@ texture = ExtResource("3_j5vdp")
 [node name="Area2D" type="Area2D" parent="." unique_id=26063363]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1698994651]
-position = Vector2(2.1543884, -4.41967)
+position = Vector2(1.946167, 0.15935898)
 shape = SubResource("RectangleShape2D_wnwu4")
 
 [node name="Timer" type="Timer" parent="." unique_id=257263356]
@@ -45,7 +45,7 @@ volume_db = 5.0
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=577565271]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=390770647]
-position = Vector2(1.9211426, -9.953886)
+position = Vector2(1.4065933, -4.456793)
 shape = SubResource("RectangleShape2D_j5vdp")
 
 [node name="reloadtimer" type="Timer" parent="." unique_id=1072525781]

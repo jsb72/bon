@@ -32,7 +32,6 @@
 [ext_resource type="PackedScene" uid="uid://wok5htmqtlc8" path="res://src/particles/slide_particle.tscn" id="21_hja65"]
 [ext_resource type="Script" uid="uid://b6rm5gkxphdna" path="res://src/player/spritetrail.gd" id="22_5shm8"]
 [ext_resource type="Shader" uid="uid://chycd0t8penwl" path="res://shaders/teleport.gdshader" id="26_a4vah"]
-[ext_resource type="Texture2D" uid="uid://daws767etifgu" path="res://sprites/ban.png" id="28_o04tx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_qnmj6"]
 size = Vector3(48, 64, 1)
@@ -936,10 +935,9 @@ texture = SubResource("GradientTexture2D_hja65")
 
 [node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1117608192]
 position = Vector2(0, -41)
-color = Color(1.1291975, 1.1291975, 1.1291975, 1)
+color = Color(1.0309138, 1.0309138, 1.0309138, 1)
 energy = 0.0
 texture = SubResource("GradientTexture2D_5shm8")
-texture_scale = 17.35
 
 [node name="spritetrail" type="Node" parent="." unique_id=556906390]
 script = ExtResource("22_5shm8")
@@ -958,42 +956,12 @@ sprite_frames = SubResource("SpriteFrames_fd7k5")
 libraries/ = SubResource("AnimationLibrary_o04tx")
 speed_scale = 2.0
 
-[node name="banane" type="Sprite2D" parent="." unique_id=383176699]
-visible = false
-modulate = Color(0.53351927, 0.53351927, 0.53351927, 1)
-position = Vector2(-2.999999, -12)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("28_o04tx")
-
 [node name="deathspriteanim" type="AnimatedSprite2D" parent="." unique_id=969468519]
 visible = false
 material = SubResource("ShaderMaterial_j2873")
 position = Vector2(0, -36)
 scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_tjw5d")
-
-[node name="restart_txt" type="Node2D" parent="." unique_id=1599983111]
-modulate = Color(1, 1, 1, 0)
-z_index = 1000
-
-[node name="ColorRect" type="ColorRect" parent="restart_txt" unique_id=655029408]
-visible = false
-offset_left = -168.0
-offset_top = -144.0
-offset_right = 167.0
-offset_bottom = -104.0
-color = Color(0, 0, 0, 1)
-
-[node name="restart_txt" type="RichTextLabel" parent="restart_txt" unique_id=310487557]
-offset_left = -224.0
-offset_top = -150.0
-offset_right = 225.0
-offset_bottom = -101.0
-theme_override_colors/default_color = Color(0.5058824, 0.078431375, 0.14901961, 1)
-theme_override_font_sizes/normal_font_size = 27
-text = "PRESS START OR RAGE QUIT"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1683301557]
 position = Vector2(0, -32)

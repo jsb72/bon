@@ -404,7 +404,6 @@ func logic_spe():
 	if Global.sprint_unlock:
 		sprint_logic()
 		
-	if Global.banane:banane_logic()
 	
 
 	
@@ -436,7 +435,6 @@ func camera_logic()->void:
 func try_play_new_anim(anim,rotation_=0.0) -> void:
 	if sprite.animation != anim or anim=="jumpup":
 		sprite.rotation=rotation_
-		banane.rotation=rotation_
 		sprite.play(anim)
 		
 	"""if sprite.animation =="jumpdown":
@@ -470,15 +468,7 @@ func sprite_animation() -> void:
 				try_play_new_anim("idle")
 	
 	if velocity.y > 0.0:
-		"""if is_on_wall():
-			try_play_new_anim("sliding_gemini")
-		else:
-			try_play_new_anim("jumpdown")"""
 		try_play_new_anim("robe")
-		"""if velocity.y > 500.0:
-			try_play_new_anim("robe")
-		else : 
-			try_play_new_anim("jumpdown")"""
 		en_train_de_tomber = true
 		
 	if en_train_de_tomber and is_on_floor():
@@ -522,12 +512,6 @@ func respawn_logic():
 		if collidobj is Ptblueprint :
 			last_floor_pos.x = collidobj.global_position.x
 			last_floor_pos.y = global_position.y
-	"""		
-	if is_on_floor_only() and !laser_dmg :
-		if velocity.x >0 :
-			last_floor_pos = position - Vector2(30,0)
-		if velocity.x <0 :
-			last_floor_pos = position + Vector2(30,0)"""
 			
 @onready var animated_sprite_for_teleport_shader: AnimatedSprite2D = $AnimatedSpriteForTeleportShader
 @onready var animation_player_for_teleport_shader: AnimationPlayer = $AnimatedSpriteForTeleportShader/AnimationPlayerForTeleportShader
@@ -572,7 +556,6 @@ func duplicate_sprite():
 
 @onready var deathspriteanim: AnimatedSprite2D = $deathspriteanim
 @onready var point_light_2d: PointLight2D = $PointLight2D
-@onready var restart_txt: Node2D = $restart_txt
 @onready var point_light_2d_2: PointLight2D = $PointLight2D2
 
 var dead_ : bool = false
@@ -586,100 +569,3 @@ func play_death_anim():
 	
 	deathspriteanim.play("default")
 		
-	"""
-	#restart_txt.show()
-	var tween = get_tree().create_tween()
-	tween.tween_property(restart_txt, "modulate", Color(1.0, 1.0, 1.0, 1.0), 10.0)
-	
-	await get_tree().create_timer(1).timeout
-	deathspriteanim.material.set("shader_parameter/hit_effect",0.0);
-	
-
-
-
-	var tween332 = get_tree().create_tween()
-	tween332.tween_property(point_light_2d, "energy", 0, 10)
-	var tween56454 = get_tree().create_tween()
-	tween56454.tween_property(point_light_2d_2, "energy", 0, 10)
-	"""
-
-
-
-
-func banane_logic():
-	if !banane.visible:banane.show()
-	
-	if sprite.animation=="idle":
-		if sprite.frame == 0:
-			if get_facing_dir() < 0 :banane.position = Vector2(-4,-5)
-			if get_facing_dir() > 0 :banane.position = Vector2(4,-5)
-		if sprite.frame == 1:
-			if get_facing_dir() < 0 :banane.position =Vector2(-5,-3)
-			if get_facing_dir() > 0 :banane.position = Vector2(5,-3)
-			
-	if sprite.animation=="run":
-		if sprite.frame == 0:
-			if get_facing_dir() < 0 :banane.position = Vector2(-7,1)
-			if get_facing_dir() > 0 :banane.position = Vector2(7,1)
-		if sprite.frame == 1:
-			if get_facing_dir() < 0 :banane.position =Vector2(-7,-1)
-			if get_facing_dir() > 0 :banane.position = Vector2(7,-1)
-		if sprite.frame == 2:
-			if get_facing_dir() < 0 :banane.position =Vector2(-7,-6)
-			if get_facing_dir() > 0 :banane.position = Vector2(7,-6)
-		if sprite.frame == 3:
-			if get_facing_dir() < 0 :banane.position =Vector2(-7,-3)
-			if get_facing_dir() > 0 :banane.position = Vector2(7,-3)
-		if sprite.frame == 4:
-			if get_facing_dir() < 0 :banane.position =Vector2(-7,1)
-			if get_facing_dir() > 0 :banane.position = Vector2(7,1)
-		if sprite.frame == 5:
-			if get_facing_dir() < 0 :banane.position =Vector2(-7,-2)
-			if get_facing_dir() > 0 :banane.position = Vector2(7,-2)
-		if sprite.frame == 6:
-			if get_facing_dir() < 0 :banane.position =Vector2(-8,-6)
-			if get_facing_dir() > 0 :banane.position = Vector2(8,-6)
-		if sprite.frame == 7:
-			if get_facing_dir() < 0 :banane.position =Vector2(-8,-4)
-			if get_facing_dir() > 0 :banane.position = Vector2(8,-4)
-			
-	if sprite.animation=="jumpup":
-		if sprite.rotation == 0:
-			if sprite.frame == 0:
-				if get_facing_dir() < 0 :banane.position = Vector2(-5,1)
-				if get_facing_dir() > 0 :banane.position = Vector2(5,1)
-			if sprite.frame == 1:
-				if get_facing_dir() < 0 :banane.position =Vector2(-5,-10)
-				if get_facing_dir() > 0 :banane.position = Vector2(5,-10)
-			if sprite.frame == 2:
-				if get_facing_dir() < 0 :banane.position =Vector2(-5,-12)
-				if get_facing_dir() > 0 :banane.position = Vector2(5,-12)
-		else:
-			if sprite.rotation<0:
-				if get_facing_dir() < 0 :banane.position = Vector2(5,-10)
-				if get_facing_dir() > 0 :banane.position = Vector2(12,-15)
-			if sprite.rotation>0:
-				if get_facing_dir() < 0 :banane.position = Vector2(-12,-15)
-				if get_facing_dir() > 0 :banane.position = Vector2(-5,-10)
-			
-	if sprite.animation=="jumpdown":
-		if sprite.frame == 0:
-			if get_facing_dir() < 0 :banane.position = Vector2(-6,-10)
-			if get_facing_dir() > 0 :banane.position = Vector2(6,-10)
-		if sprite.frame == 1:
-			if get_facing_dir() < 0 :banane.position =Vector2(-6,1)
-			if get_facing_dir() > 0 :banane.position = Vector2(6,1)
-			
-	if sprite.animation=="jumpground":
-		if sprite.frame == 0:
-			if get_facing_dir() < 0 :banane.position = Vector2(-6,-1)
-			if get_facing_dir() > 0 :banane.position = Vector2(6,-1)
-		if sprite.frame == 1:
-			if get_facing_dir() < 0 :banane.position =Vector2(-6,-3)
-			if get_facing_dir() > 0 :banane.position = Vector2(6,-3)
-		
-	if get_facing_dir() < 0 :
-		banane.flip_h = true
-	if get_facing_dir() > 0 :
-		banane.flip_h = false
-@onready var banane: Sprite2D = $banane

@@ -20,11 +20,11 @@ texture = ExtResource("2_m74nn")
 
 [node name="Polygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=916409187]
 z_index = 100
-polygon = PackedVector2Array(-37, -2388, -40, -1657, -558, -1663, -555, -1434, 528, -1434, 522, -292, -859, -288, -853, -53, 913, -46, 925.77026, 2183.2085, 2269, 795, 1442, -1984)
+polygon = PackedVector2Array(-13.59668, -2395.55, -40, -1657, -558, -1663, -555, -1434, 528, -1434, 522, -292, -859, -288, -853, -53, 913, -46, 925.77026, 2183.2085, 2269, 795, 1442, -1984)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1536434695]
 z_index = 100
-polygon = PackedVector2Array(-348, -2385, -341, -1958, -828, -1961, -828, -1067, 178, -1062, 175, -795, -1171, -798, -1168, 407, 590, 407, 591.59033, 2158.145, -2278, 552, -1976, -1796)
+polygon = PackedVector2Array(-366.44482, -2392.6218, -341, -1958, -828, -1961, -828, -1067, 178, -1062, 175, -795, -1171, -798, -1168, 407, 590, 407, 591.59033, 2158.145, -2278, 552, -1976, -1796)
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1152256750]
 modulate = Color(0.47843137, 0.47843137, 0.47843137, 1)

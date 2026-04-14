@@ -46,14 +46,26 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animated_sprite_2d.play("attack")
 		audio_stream_player_2d.play()
+		
 		if bodycolleft != null and bodycolright == null:
 			spiderrendu.scale.x = -1
-			await get_tree().create_timer(0.2).timeout
-			bodycolleft.position.x -= 5
+			await get_tree().create_timer(0.1).timeout
+			bodycolleft.position.x -= 2
+			"""
+			if bodycolleft is Player : 
+				bodycolleft.shakecamtimer.start()
+				bodycolleft.laser_dmg = true
+				await get_tree().create_timer(1).timeout
+				bodycolleft.laser_dmg = false"""
 		if bodycolright != null and bodycolleft == null:
 			spiderrendu.scale.x = 1
-			await get_tree().create_timer(0.2).timeout
-			bodycolright.position.x += 5
+			await get_tree().create_timer(0.1).timeout
+			bodycolright.position.x += 2
+			"""if bodycolright is Player : 
+				bodycolright.shakecamtimer.start()
+				bodycolright.laser_dmg = true
+				await get_tree().create_timer(1).timeout
+				bodycolright.laser_dmg = false"""
 	elif !is_attacking():
 		if direction:
 			velocity.x = direction * SPEED

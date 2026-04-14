@@ -48,6 +48,7 @@ metadata/_edit_horizontal_guides_ = [-384.41772]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=122778045]
 follow_viewport_enabled = true
+follow_viewport_scale = 0.9
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer" unique_id=1890587105]
 z_index = 11
@@ -59,7 +60,7 @@ process_material = SubResource("ParticleProcessMaterial_uxuas")
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=488697629]
 follow_viewport_enabled = true
-follow_viewport_scale = 1.4
+follow_viewport_scale = 1.2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer2" unique_id=1726928610]
 z_index = 11
@@ -71,7 +72,7 @@ process_material = SubResource("ParticleProcessMaterial_uxuas")
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=131403018]
 follow_viewport_enabled = true
-follow_viewport_scale = 1.8
+follow_viewport_scale = 1.5
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer3" unique_id=2070471307]
 z_index = 11

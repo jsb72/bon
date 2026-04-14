@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3t2f2pn81x60"]
 
 [ext_resource type="Texture2D" uid="uid://cn2jwlk8pgem2" path="res://sprites/univers.png" id="1_bgnu4"]
+[ext_resource type="PackedScene" uid="uid://butf5gp8u4ri6" path="res://src/vivants/followeye.tscn" id="2_yjfjr"]
 
 [sub_resource type="Animation" id="Animation_bgnu4"]
 length = 0.001
@@ -40,18 +41,21 @@ _data = {
 &"new_animation": SubResource("Animation_hiy0j")
 }
 
-[node name="univers" type="Sprite2D"]
+[node name="univers" type="Sprite2D" unique_id=1936234233]
+self_modulate = Color(0, 0, 0, 1)
 texture = ExtResource("1_bgnu4")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1687981805]
 offset_left = -31.0
 offset_top = -52.0
 offset_right = 46.0
 offset_bottom = 34.0
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
-libraries = {
-&"": SubResource("AnimationLibrary_no8wf")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=672252984]
+libraries/ = SubResource("AnimationLibrary_no8wf")
+autoplay = &"new_animation"
+
+[node name="Node2D" parent="." unique_id=1318008718 instance=ExtResource("2_yjfjr")]
+position = Vector2(2, 1)
+scale = Vector2(4, 4)

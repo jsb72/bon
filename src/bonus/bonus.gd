@@ -11,6 +11,9 @@ extends Node2D
 @onready var dashsprite: Sprite2D = $Node2D/sprites/dashsprite
 @onready var doublejump: Sprite2D = $Node2D/sprites/doublejump
 
+@onready var dash_icon: TextureRect = $Node2D/info_bonus/dash_icon
+@onready var jump_icon: TextureRect = $Node2D/info_bonus/jump_icon
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,15 +21,27 @@ func _ready() -> void:
 	dashsprite.hide()
 	if !Global.sprint_unlock:
 		if type_bonus == "sprint":
-			info_bonus.text = "[color=#FFFFFF]You can now sprint if you keep dash input pressed![/color]"
+			info_bonus.text = "[color=#FFFFFF]You can now sprint! Just hold[/color]"
+			
+			dash_icon.show()
+			jump_icon.hide()
+			
 			sprintsprite.show()
 	if !Global.dash_unlock:
 		if type_bonus == "dash":
-			info_bonus.text = "[color=#FFFFFF]You can now dash with right click or RT button![/color]"
+			info_bonus.text = "[color=#FFFFFF]You can now dash![/color]"
+			
+			dash_icon.show()
+			jump_icon.hide()
+			
 			dashsprite.show()
 	if !Global.doublejump_unlock:
 		if type_bonus == "doublejump":
 			info_bonus.text = "[color=#FFFFFF]You can now double jump![/color]"
+			
+			jump_icon.show()
+			dash_icon.hide()
+			
 			doublejump.show()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

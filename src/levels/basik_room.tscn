@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d0idjcg45flp4"]
 
 [ext_resource type="Texture2D" uid="uid://b42g5ijdmrwef" path="res://sprites/rooms/basik.png" id="1_nyvph"]
+[ext_resource type="Texture2D" uid="uid://dmayxtc1kkd33" path="res://sprites/AnimationSheet_CharacterVECTOR.png" id="4_qvsoj"]
+[ext_resource type="PackedScene" uid="uid://ufnf3lc7ewin" path="res://src/vivants/a_atentacle.tscn" id="4_s6sva"]
 [ext_resource type="PackedScene" uid="uid://jitchrxcsgsf" path="res://src/elements/ball.tscn" id="6_nyvph"]
-[ext_resource type="PackedScene" uid="uid://j3gcywxflkf1" path="res://src/tentacle/scenes/arm.tscn" id="7_nmdn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ro755"]
 size = Vector2(275, 174)
@@ -18,6 +19,35 @@ size = Vector2(6.1286125, 558.38855)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swwew"]
 size = Vector2(801.24286, 4.4637527)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmpmd"]
+atlas = ExtResource("4_qvsoj")
+region = Rect2(266, 535, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brhbg"]
+atlas = ExtResource("4_qvsoj")
+region = Rect2(399, 535, 133, 133)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gxno5"]
+atlas = ExtResource("4_qvsoj")
+region = Rect2(532, 535, 133, 133)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nyvph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmpmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brhbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gxno5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="basik_room" type="Node2D" unique_id=1997840322]
 
@@ -61,11 +91,17 @@ position = Vector2(12.275421, 629.38855)
 scale = Vector2(0.9999997, 0.9999997)
 shape = SubResource("RectangleShape2D_swwew")
 
-[node name="Arm" parent="." unique_id=1104907447 node_paths=PackedStringArray("target") instance=ExtResource("7_nmdn2")]
-position = Vector2(-453, -93)
+[node name="AAtentacle" parent="." unique_id=1566691538 node_paths=PackedStringArray("target") instance=ExtResource("4_s6sva")]
+position = Vector2(-196, 163)
 target = NodePath("../ball")
 
 [node name="ball" parent="." unique_id=2080036255 instance=ExtResource("6_nyvph")]
 position = Vector2(-206, 131.00003)
 starting_vel = Vector2(100, 0)
 bouncing = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=923761229]
+z_index = 2
+position = Vector2(-500, 245)
+sprite_frames = SubResource("SpriteFrames_nyvph")
+autoplay = "default"

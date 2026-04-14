@@ -23,11 +23,18 @@ func _ready() -> void:
 	t2_1.hide()
 	t2_2.hide()
 	t2_3.hide()
+	
+	
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta: float) -> void:
+	
+	
+	
 	if btn1 and btn2 and btn3 and btn4 and zoom_true:
 		zoomcamfixnbig.priority = 100
 	else :

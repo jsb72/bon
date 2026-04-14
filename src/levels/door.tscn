@@ -139,12 +139,12 @@ libraries/ = SubResource("AnimationLibrary_fuxk6")
 autoplay = &"new_animation"
 
 [node name="particle" parent="sprite" unique_id=1672415593 instance=ExtResource("7_fuxk6")]
-position = Vector2(-6870.7085, 1430.657)
+position = Vector2(-9202.825, 2489.0505)
 rotation = -0.41887903
 scale = Vector2(3.6496353, 3.6496353)
-amount = 300
+amount = 100
 lifetime = 2.0
-emission_rect_extents = Vector2(700, 1)
+emission_rect_extents = Vector2(1400, 1)
 tangential_accel_min = 100.0
 tangential_accel_max = 100.0
 
